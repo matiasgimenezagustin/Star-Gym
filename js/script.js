@@ -54,7 +54,7 @@ const sayHello = () => {
 
 const selectAnOptionF = () => {
 
-    selectAnOption = prompt("Seleccione que funcion de nuestra app: \n- Calculadora IMC \n- Ejercicios \n- Planes de Ejercicios \n- ESC para salir de la app ");
+    selectAnOption = prompt("Seleccione que funcion de nuestra app: \n- Calculadora IMC \n- Ejercicios \n- ESC para salir de la app ");
 
     return selectAnOption;
 
