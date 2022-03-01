@@ -138,7 +138,7 @@ const askWeight = () => {
 
 const calculator = () => {
 
-    let tall = askTall()
+    let tall = askTall();
 
     tall /= 100;
 
@@ -178,7 +178,7 @@ const resultImcCondition = () =>{
 
     if (imc < 15){
 
-        alert("Su IMC es inferior a 15" + thisMean + "delgadez muy severa." + recomendation)
+        alert("Su IMC es inferior a 15" + thisMean + "delgadez muy severa." + recomendation);
 
     }else if ((imc >= 15) && (imc <= 15.9)){
 
