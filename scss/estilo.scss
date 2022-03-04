@@ -74,13 +74,14 @@ body{
                 font-size: 1rem;
             }
         }
+        p{
+            text-align: center;
+            font-size: 1.3rem;
+        }
     }
     div{
         margin-top: 50px;
         h2{
-            text-align: center;
-        }
-        h3{
             text-align: center;
         }
     }
@@ -90,4 +91,13 @@ body{
             text-align: center;
         }
     }
+}
+
+.nameOfActivity{
+    text-align: center;
+    font-size: 1.3rem;
+}
+.diff{
+    text-align: center;
+    font-size: 1rem;
 }

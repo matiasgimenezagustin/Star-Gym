@@ -1,19 +1,9 @@
 
 
-/* El algoritmo de momento a desarrollar en el proyecto final cuenta con la siguientes funcionalidades:
-
--Calculadora Indice de Masa Corporal
-
--Filtrado por planes de ejercicio
-*/
-
-//Variables Globales
-
 let selectAnOption;
 
-//Creacion de objetos de ejercicios con class
-
 class Activities{
+
     constructor (name, dificulty, duration){
 
         this.name = name;
@@ -40,17 +30,17 @@ const challengerActivity2 = new Activities ("Lord Sith", "Challenger", "1,45 hr"
 
 const arrayActivities = [easyActivity1, easyActivity2, midActivity1, midActivity2, challengerActivity1, challengerActivity2];
 
-//Funcion para saludar
 
 const sayHello = () => {
 
     let askName = prompt("Ingrese su nombre:");
 
-    return alert("Bienvenido " + askName);
+    let h1 = document.getElementById("title");
+    
+    return h1.innerText = "Bienvenido/a " + askName + " a tu StarGym"
     
 }
 
-//Funcion para elegir una accion
 
 const selectAnOptionF = () => {
 
@@ -60,7 +50,6 @@ const selectAnOptionF = () => {
 
 }
 
-//Funcion para mostrar opciones de ejercicios
 const selectActivityF = () => {
 
     let selectActivity = prompt("Ingrese la dificultad que desea entre:\n- Principiante\n- Vengador\n- Challenger");
@@ -73,11 +62,22 @@ const filterResult = (dificulty) => {
 
     const resultFilter = arrayActivities.filter ((el) => el.dificulty.includes(dificulty));
 
-    return alert("Los resultados de su busqueda son: \n" + resultFilter[0].name + "\n- Dificultad: " + resultFilter[0].dificulty + "\n- Duracion: " + resultFilter[0].duration + "\n" + "\n" + resultFilter[1].name + "\n- Dificultad: " + resultFilter[1].dificulty + "\n- Duracion: " + resultFilter[1].duration  );
+    
+    for (const activites of resultFilter){
 
+        let container = document.createElement("div")
+        container.innerHTML =
+
+        `<h3 class="nameOfActivity">Nombre: ${activites.name}</h3>
+
+        <p class="diff"> Dificultad: ${activites.dificulty}</p>
+
+        <p class="diff"> Duration: ${activites.duration}</p>`;
+
+        document.body.appendChild(container);
+
+    };
 }
-
-//Filtrador de dificultad con resultados (Los resultados prefiero ponerlos en la segunda entrega ya que aun no se bien que ejercicios pondre. Pero dejo el filtrador hecho o almenos "el protofiltrador")
 
 const dificultyFilter = () => {
 
@@ -98,12 +98,6 @@ const dificultyFilter = () => {
     }
 }
 
-
-
-
-//Funciones de opcion de CalculadoraIMC
-
-//Funcion para pedir Altura
 
 const askTall = () => {
 
@@ -130,11 +124,11 @@ const askWeight = () => {
         askWeight();
 
     }
+
     return weith; 
 
 }
 
-//Funcion de calculo del IMC
 
 const calculator = () => {
 
@@ -148,87 +142,14 @@ const calculator = () => {
 
     imc = imc.toFixed(1);
 
+    let imcResult = document.getElementById("resultImc");
+
+    imcResult.innerText = "Su imc es: " + imc;
+
     return imc;
 
 }
+sayHello()
+calculator()
+dificultyFilter()
 
-
-
-//Funcion para dar el IMC con parametros 
-
-const conditionIMC = (mayorA, menorA, resultCondition) => {
-
-    let recomendation = "\nRecomendamos que acuda a su medico de confianza para contrastar estos datos";
-    
-    let thisMean = ": \nEsto significa que posee ";
-
-    return alert("Su IMC es entre " + mayorA + " - " + menorA + thisMean + resultCondition + recomendation);
-
-}
-
-//Funcion para a partir del IMC del usuario, dar un diagnostico
-
-const resultImcCondition = () =>{
-
-    let recomendation = "\nRecomendamos que acuda a su medico de confianza para contrastar estos datos"; 
-
-    let thisMean = ": \nEsto significa que posee ";
-
-    let imc = calculator();
-
-    if (imc < 15){
-
-        alert("Su IMC es inferior a 15" + thisMean + "delgadez muy severa." + recomendation);
-
-    }else if ((imc >= 15) && (imc <= 15.9)){
-
-        conditionIMC(15, 15.9, "delgadez severa");
-
-    }else if((imc >= 16) && (imc <=  18.4)){
-
-        conditionIMC(16, 18.4, "delgadez");
-
-    }else if((imc >= 18.5) && (imc <=  24.9)){
-
-        conditionIMC(18.5, 24.9, "peso saludable");
-
-    }else if((imc >= 25) && (imc <=  29.9)){
-
-        conditionIMC(25, 29.9, "sobrepeso");
-
-    }else if((imc >= 30) && (imc <=  34.9)){
-
-        conditionIMC(30, 34.9, "obesidad moderada");
-
-    }
-    else if((imc >= 35) && (imc <=  39.9)){
-
-        conditionIMC(35, 39.9, "obesidad severa");
-
-    }
-    else if (imc > 40){
-
-        alert("Su IMC es mayor a 40" + thisMean + "obesidad severa (morbida)." + recomendation);
-
-    }
-}
-
-
-
-
-//Ciclo While con las funcionalidades
-
-sayHello();
-
-while (selectAnOptionF() != "ESC"){
-
-    if (selectAnOption == "Calculadora IMC"){
-
-        resultImcCondition();
-
-    }else if (selectAnOption == "Ejercicios"){
-
-        dificultyFilter();
-
-    }
-}

@@ -58,12 +58,21 @@ body {
         width: 8rem;
         color: black;
         font-size: 1rem; }
+    body .imcCalculator p {
+      text-align: center;
+      font-size: 1.3rem; }
   body div {
     margin-top: 50px; }
     body div h2 {
       text-align: center; }
-    body div h3 {
-      text-align: center; }
   body footer h3 {
     margin-top: 20px;
     text-align: center; }
+
+.nameOfActivity {
+  text-align: center;
+  font-size: 1.3rem; }
+
+.diff {
+  text-align: center;
+  font-size: 1rem; }
