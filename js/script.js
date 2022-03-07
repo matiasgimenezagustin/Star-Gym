@@ -12,20 +12,26 @@ class Activities{
 
         this.duration = duration;
 
+        this.sayDificulty = function (){
+            
+            let sayDificulty = "\n" + this.dificulty;
+    
+            return sayDificulty;
+        }
     }
 }
 
-const easyActivity1 = new Activities ("Aprendiz Sith", "Principiante", "30 min");
+const easyActivity1 = new Activities ("Aprendiz Sith", "principiante", "30 min");
 
-const easyActivity2 = new Activities ("Aprendiz Padawan", "Principiante", "45 min");
+const easyActivity2 = new Activities ("Aprendiz Padawan", "principiante", "45 min");
 
-const midActivity1 = new Activities ("Caza Recompensas", "Vengador", "1 hr");
+const midActivity1 = new Activities ("Caza Recompensas", "vengador", "1 hr");
 
-const midActivity2 = new Activities ("Jedi", "Vengador", "1,20 hr");
+const midActivity2 = new Activities ("Jedi", "vengador", "1,20 hr");
 
-const challengerActivity1 = new Activities ("El camino asi es", "Challenger", "1,30 hr");
+const challengerActivity1 = new Activities ("El camino asi es", "challenger", "1,30 hr");
 
-const challengerActivity2 = new Activities ("Lord Sith", "Challenger", "1,45 hr");
+const challengerActivity2 = new Activities ("Lord Sith", "challenger", "1,45 hr");
 
 
 const arrayActivities = [easyActivity1, easyActivity2, midActivity1, midActivity2, challengerActivity1, challengerActivity2];
@@ -37,7 +43,7 @@ const sayHello = () => {
 
     let h1 = document.getElementById("title");
     
-    return h1.innerText = "Bienvenido/a " + askName + " a tu StarGym"
+    return h1.innerText = "Bienvenido/a " + askName + " a tu StarGym";
     
 }
 
@@ -52,48 +58,52 @@ const selectAnOptionF = () => {
 
 const selectActivityF = () => {
 
-    let selectActivity = prompt("Ingrese la dificultad que desea entre:\n- Principiante\n- Vengador\n- Challenger");
+    let selectActivity = prompt("Ingrese la dificultad que desea entre:" + easyActivity1.sayDificulty() + midActivity1.sayDificulty() + challengerActivity1.sayDificulty());
 
-    return selectActivity;
+    return selectActivity.toLowerCase();
 
 }
 
 const filterResult = (dificulty) => {
 
     const resultFilter = arrayActivities.filter ((el) => el.dificulty.includes(dificulty));
-
     
+    return resultFilter;
+}
+
+const domResultFilter = (dificulty) => {
+
+    const resultFilter = filterResult(dificulty);
+
     for (const activites of resultFilter){
 
         let container = document.createElement("div")
         container.innerHTML =
 
         `<h3 class="nameOfActivity">Nombre: ${activites.name}</h3>
-
         <p class="diff"> Dificultad: ${activites.dificulty}</p>
-
         <p class="diff"> Duration: ${activites.duration}</p>`;
 
         document.body.appendChild(container);
 
-    };
+    }
 }
 
 const dificultyFilter = () => {
 
     let selectActivity = selectActivityF();
 
-    if (selectActivity == "Principiante"){
+    if (selectActivity == "principiante"){
 
-        filterResult("Principiante");
+        domResultFilter("principiante");
 
-    }else if (selectActivity == "Vengador"){
+    }else if (selectActivity == "vengador"){
 
-        filterResult("Vengador");
+        domResultFilter("vengador");
 
-    }else if (selectActivity == "Challenger"){
+    }else if (selectActivity == "challenger"){
 
-        filterResult("Challenger");
+        domResultFilter("challenger");
 
     }
 }
@@ -149,7 +159,8 @@ const calculator = () => {
     return imc;
 
 }
-sayHello()
-calculator()
-dificultyFilter()
+
+sayHello();
+calculator();
+dificultyFilter();
 
