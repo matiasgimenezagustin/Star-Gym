@@ -1,4 +1,7 @@
 
+let tall;
+
+let weith;
 
 let selectAnOption;
 
@@ -109,44 +112,10 @@ const dificultyFilter = () => {
 }
 
 
-const askTall = () => {
-
-    let tall = parseInt(prompt("Indique su altura en centimetros"));
-
-    if (isNaN(tall) == true){
-
-        askTall();
-
-    }
-
-    return tall;
-
-}
-
-//Funcion para pedir peso
-
-const askWeight = () => {
-
-    let weith = parseInt(prompt("Indique su peso corporal en kg"));
-
-    if (isNaN(weith) == true){
-
-        askWeight();
-
-    }
-
-    return weith; 
-
-}
-
 
 const calculator = () => {
 
-    let tall = askTall();
-
     tall /= 100;
-
-    let weith = askWeight();
 
     let imc = weith / (tall * tall);
 
@@ -160,7 +129,24 @@ const calculator = () => {
 
 }
 
-sayHello();
-calculator();
-dificultyFilter();
+let miCalculator = document.getElementById("calculatorForm");
+
+miCalculator.addEventListener("submit",validarFormulario);
+
+function validarFormulario(e){
+        
+    e.preventDefault();
+        
+    let formulario = e.target;
+        
+    tall = parseInt(formulario.children[0].value); 
+        
+    weith = parseInt(formulario.children[1].value); 
+    calculator(); 
+}
+
+
+
+
+
 
