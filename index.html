@@ -14,9 +14,8 @@
     <nav class="nav">
         <h2>StarGym</h2>
         <ul class="liContainer">
-            <li><a href="#" class="link">Menu</a></li>
-            <li><a href="#" class="link">Calculadora IMC</a></li>
-            <li><a href="#" class="link">Entrenamientos</a></li>
+            <li><a href="./index.html" class="link">Menu</a></li>
+            <li><a href="./html/register.html" class="link">Registro</a></li>
         </ul>
     </nav>
     <header>
@@ -30,10 +29,18 @@
             <input type="submit" class="submitButton" id="getValue">
         </form>
         <p class="p" id="resultImc">Resultado:</p>
+        <p id="resultOfCalculator"></p>
     </div>
-    <div id="filterContainer">
-        <h2>Resultados del Filtrador</h2>
-    </div>
+    <form id="filterForm">
+        <h2>Filtre los entrenamientos:</h2>
+        <select id="filterSelector">
+            <option value="principiante">Principiante</option>
+            <option value="vengador">Vengador</option>
+            <option value="challenger">Challenger</option>
+        </select>
+        <input type="submit">
+    </form>
+
     <script src="./js/script.js"></script>
 </body>
 </html>

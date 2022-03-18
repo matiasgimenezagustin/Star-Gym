@@ -11,7 +11,7 @@ $font-style: 'Smooch Sans', sans-serif;
     font-family: $font-style;
 }
 body{
-    background-color: rgb(87, 0, 228);
+    background-color: #5700e4;
     nav{
         background-color: darkblue;
         display: flex;
@@ -45,15 +45,16 @@ body{
         }
     }
     .imcCalculator{
+        border-radius: 30px;
         background-color: darkblue;
-        width: 30rem;
+        width: 40rem;
         height: 25rem;
         margin: auto;
         display: flex;
         flex-direction: column;
         h2{
             height: 30%;
-            font-size: 1.5rem;
+            font-size: 2rem;
             text-align: center;
             margin-top: 35px;
         }
@@ -65,9 +66,9 @@ body{
             align-items: center;
             input{
                 color: black;
-                width: 12rem;
+                width: 16rem;
                 height: 30px;
-                font-size: 1rem;
+                font-size: 1.5rem;
             }
             .submitButton{
                 width: 8rem;
@@ -77,7 +78,15 @@ body{
         }
         p{
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+        }
+        #containerResult{
+            margin-top: 5px;
+            p{
+                font-size: 1.5rem;
+                padding: 0px 20px 0px 20px;
+                margin-bottom: 20px;
+            }
         }
     }
     div{
@@ -95,4 +104,61 @@ body{
 .diff{
     text-align: center;
     font-size: 1.3rem;
+}
+#filterForm{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    select{
+        color: black;
+        width: 10rem;
+        font-size: 1.5rem;
+        option{
+            color: black;
+            font-size: 1.5rem;
+        }
+    }
+    input{
+        width: 6rem;
+        color: black;
+        font-size: 1rem;
+    }
+}
+.containerFormulario{
+    width: 45rem;
+    background-color:darkblue;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    h2{
+        height: 30%;
+        font-size: 2rem;
+        margin-top: 35px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label{
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+        input{
+            color: black;
+            width: 16rem;
+            height: 30px;
+            font-size: 1rem;
+        }
+        #registerSubmit{
+            width: 8rem;
+            color: black;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
 }
