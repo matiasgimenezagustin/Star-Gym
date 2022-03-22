@@ -1,9 +1,5 @@
 
-let tall;
-
-let weith;
-
-let imc;
+let tall, imc, weith, activitySelected;
 
 const calculator = () => {
 
@@ -86,15 +82,7 @@ const createDomRecomendation = () =>{
 
     let p = document.getElementById("resultOfCalculator");
 
-    if ((isNaN(tall)== true)||(isNaN(weith)== true)||(tall == 0)||(weith == 0)){
-
-        p.innerText = "Error: solo pueden ingresarse valores numericos NO nulos.";
-
-    }else{
-
-        p.innerText = resultText;
-
-    }
+    ((isNaN(tall)== true)||(isNaN(weith)== true)||(tall == 0)||(weith == 0)) ? p.innerText = "Error: solo pueden ingresarse valores numericos NO nulos." : p.innerText = resultText;
 }
 
 let miCalculator = document.getElementById("calculatorForm");
@@ -198,8 +186,6 @@ const dificultyFilter = () => {
 let selectActivity = document.getElementById("filterForm");
 
 selectActivity.addEventListener("submit", validarFormFilter);
-
-let activitySelected;
 
 function validarFormFilter(e){
         

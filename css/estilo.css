@@ -130,3 +130,12 @@ body {
       color: black;
       font-size: 1rem;
       margin-bottom: 1rem; }
+
+@media screen and (max-width: 420px) {
+  nav {
+    width: 100%; }
+  .imcCalculator {
+    width: 300px;
+    height: 200px; }
+    .imcCalculator .calculatorForm {
+      width: 300px; } }

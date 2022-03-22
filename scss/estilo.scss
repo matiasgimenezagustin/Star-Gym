@@ -162,3 +162,17 @@ body{
         }
     }
 }
+
+@media screen and (max-width: 420px){
+    nav{
+        width: 100%;
+    }
+    .imcCalculator{
+        width: 300px;
+        height: 200px;
+        .calculatorForm{
+            width: 300px;
+        }
+    }
+
+}
