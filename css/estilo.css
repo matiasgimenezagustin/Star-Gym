@@ -35,9 +35,9 @@ body {
   body .imcCalculator {
     border-radius: 30px;
     background-color: darkblue;
-    width: 40rem;
     height: 25rem;
-    margin: auto;
+    margin-left: 10%;
+    margin-right: 10%;
     display: flex;
     flex-direction: column; }
     body .imcCalculator h2 {
@@ -134,8 +134,7 @@ body {
 @media screen and (max-width: 420px) {
   nav {
     width: 100%; }
-  .imcCalculator {
-    width: 300px;
-    height: 200px; }
-    .imcCalculator .calculatorForm {
-      width: 300px; } }
+  body .imcCalculator {
+    height: 400px;
+    margin-left: 0%;
+    margin-right: 0%; } }
