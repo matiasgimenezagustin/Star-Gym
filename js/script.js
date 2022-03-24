@@ -82,7 +82,17 @@ const createDomRecomendation = () =>{
 
     let p = document.getElementById("resultOfCalculator");
 
-    ((isNaN(tall)== true)||(isNaN(weith)== true)||(tall == 0)||(weith == 0)) ? p.innerText = "Error: solo pueden ingresarse valores numericos NO nulos." : p.innerText = resultText;
+    if ((isNaN(tall)== true)||(isNaN(weith)== true)||(tall == 0)||(weith == 0)){
+
+        p.innerText = "Error: solo pueden ingresarse valores numericos NO nulos.";
+
+    }else{
+
+        p.innerText = resultText;
+
+        newAchievementCalculator()
+
+    }
 }
 
 let miCalculator = document.getElementById("calculatorForm");
@@ -104,6 +114,22 @@ function validarFormulario(e){
     createDomRecomendation();
 
 }
+
+const newAchievementCalculator = () =>{
+    
+    Swal.fire({
+
+        title: "Nuevo logro desbloqueado",
+        
+        text: "Usar la calculadora Imc",
+
+        icon: "success",
+
+        timer: 1500,
+
+    })
+}
+
 
 class Activities{
 
