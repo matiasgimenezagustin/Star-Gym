@@ -1,6 +1,20 @@
 
 let tall, imc, weith, activitySelected;
 
+let scoreImc = 0;
+
+let score = 0;
+
+const scoreAccountant = () => {
+
+    let scoreId = document.getElementById("score");
+
+    scoreId.innerText = "Mis puntos: " + score; 
+
+}
+
+
+
 const calculator = () => {
 
     tall /= 100;
@@ -117,7 +131,20 @@ function validarFormulario(e){
 
 const newAchievementCalculator = () =>{
     
-    Swal.fire({
+    if (scoreImc >= 1){
+
+        console.log("scoreImc " + scoreImc);
+
+    }
+    else{
+
+        scoreImc += 1;
+
+        score += scoreImc;
+
+        scoreAccountant();
+
+        Swal.fire({
 
         title: "Nuevo logro desbloqueado",
         
@@ -127,8 +154,12 @@ const newAchievementCalculator = () =>{
 
         timer: 1500,
 
-    })
-}
+        })
+
+        console.log(scoreImc)
+    }
+}    
+
 
 
 class Activities{
