@@ -13,8 +13,6 @@ const scoreAccountant = () => {
 
 }
 
-
-
 const calculator = () => {
 
     tall /= 100;
@@ -88,6 +86,7 @@ const resultImcCondition = () =>{
     }
 
     return resultText;
+    
 }
 
 const createDomRecomendation = () =>{
