@@ -12,30 +12,6 @@ $font-style: 'Smooch Sans', sans-serif;
 }
 body{
     background-color: #5700e4;
-    nav{
-        background-color: darkblue;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        h2{
-            width: 30%;
-            text-align: center;
-            font-size: 2rem;
-        }
-        ul{
-            width: 70%;
-            display: flex;
-            height: 70px;
-            justify-content: center;
-            align-items: center;
-            gap: 10%;
-            li{
-                .link{
-                    font-size: 1.5rem;
-                }
-            }
-        }
-    }
     header{
         h1{
             text-align: center;
@@ -93,6 +69,31 @@ body{
         margin-top: 50px;
         h2{
             text-align: center;
+        }
+    }
+}
+
+.nav{
+    background-color: darkblue;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    h2{
+        width: 30%;
+        text-align: center;
+        font-size: 2rem;
+    }
+    ul{
+        width: 70%;
+        display: flex;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        li{
+            .link{
+                font-size: 1.5rem;
+            }
         }
     }
 }
@@ -177,4 +178,66 @@ body{
         margin-right: 0%;
     }
 
+}
+
+.container h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    
+}
+
+.container .search{
+    form{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        width: auto;
+        input{
+            font-family: $font-style;
+            color: black;
+            height: 2rem;
+            font-size: 14px;
+        }
+        button{
+            color: rgb(21, 114, 3);
+            font-size: 1.5rem;
+            width: 2rem;
+            font-weight: bolder;
+        }
+    }
+    
+}
+.li-container{
+    ul{
+        li{
+            border-bottom: black 1px solid;
+            display: flex;
+            flex-direction: column;
+            background-color: darkblue;
+            width: 90%;
+            margin: auto;
+            gap: 10px;
+            padding: 2%;
+            p{
+                word-wrap: break-word;
+                height: auto;
+            }
+            button{
+                align-self: flex-end;
+                margin-right: 30px;
+                color: rgb(175, 1, 1);
+                font-size: 1.5rem;
+                width: 2rem;
+                font-weight: bolder;
+            }
+        }
+    }
+}
+.empty{
+    p{
+        text-align: center;
+    }
 }
