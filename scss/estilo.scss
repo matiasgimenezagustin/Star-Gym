@@ -212,6 +212,9 @@ body{
 }
 .li-container{
     ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         li{
             border-bottom: black 1px solid;
             display: flex;

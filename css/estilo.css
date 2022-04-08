@@ -167,25 +167,29 @@ body {
     width: 2rem;
     font-weight: bolder; }
 
-.li-container ul li {
-  border-bottom: black 1px solid;
+.li-container ul {
   display: flex;
   flex-direction: column;
-  background-color: darkblue;
-  width: 90%;
-  margin: auto;
-  gap: 10px;
-  padding: 2%; }
-  .li-container ul li p {
-    word-wrap: break-word;
-    height: auto; }
-  .li-container ul li button {
-    align-self: flex-end;
-    margin-right: 30px;
-    color: #af0101;
-    font-size: 1.5rem;
-    width: 2rem;
-    font-weight: bolder; }
+  gap: 20px; }
+  .li-container ul li {
+    border-bottom: black 1px solid;
+    display: flex;
+    flex-direction: column;
+    background-color: darkblue;
+    width: 90%;
+    margin: auto;
+    gap: 10px;
+    padding: 2%; }
+    .li-container ul li p {
+      word-wrap: break-word;
+      height: auto; }
+    .li-container ul li button {
+      align-self: flex-end;
+      margin-right: 30px;
+      color: #af0101;
+      font-size: 1.5rem;
+      width: 2rem;
+      font-weight: bolder; }
 
 .empty p {
   text-align: center; }
