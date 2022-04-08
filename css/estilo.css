@@ -1,195 +1,144 @@
-/*Normalize*/
 * {
-  padding: 0;
   margin: 0;
-  text-decoration: none;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: VT323;
+  color: #99ff00;
   list-style-type: none;
-  color: white;
-  font-family: "Smooch Sans", sans-serif; }
+  text-decoration: none; }
 
 body {
-  background-color: #5700e4; }
-  body header h1 {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    font-size: 3rem; }
-  body .imcCalculator {
-    border-radius: 30px;
-    background-color: darkblue;
-    height: 25rem;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: flex;
-    flex-direction: column; }
-    body .imcCalculator h2 {
-      height: 30%;
-      font-size: 2rem;
-      text-align: center;
-      margin-top: 35px; }
-    body .imcCalculator form {
-      height: 70%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center; }
-      body .imcCalculator form input {
-        color: black;
-        width: 16rem;
-        height: 30px;
-        font-size: 1.5rem; }
-      body .imcCalculator form .submitButton {
-        width: 8rem;
-        color: black;
-        font-size: 1rem; }
-    body .imcCalculator p {
-      text-align: center;
-      font-size: 1.5rem; }
-    body .imcCalculator #containerResult {
-      margin-top: 5px; }
-      body .imcCalculator #containerResult p {
-        font-size: 1.5rem;
-        padding: 0px 20px 0px 20px;
-        margin-bottom: 20px; }
-  body div {
-    margin-top: 50px; }
-    body div h2 {
-      text-align: center; }
+  background-color: #005e00;
+  background-image: url(../img/patron-fallout.png);
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+.content {
+  position: relative;
+  padding: 5%; }
 
 .nav {
-  background-color: darkblue;
   display: flex;
-  align-items: center;
-  width: 100%; }
-  .nav h2 {
-    width: 30%;
-    text-align: center;
-    font-size: 2rem; }
-  .nav ul {
-    width: 70%;
+  justify-content: space-around;
+  border-bottom: yellowgreen 1px solid; }
+  .nav .liContainer {
+    width: 60%;
     display: flex;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    gap: 10%; }
-    .nav ul li .link {
-      font-size: 1.5rem; }
-
-.nameOfActivity {
-  text-align: center;
-  font-size: 1.5rem; }
-
-.diff {
-  text-align: center;
-  font-size: 1.3rem; }
-
-#filterForm {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px; }
-  #filterForm select {
-    color: black;
-    width: 10rem;
-    font-size: 1.5rem; }
-    #filterForm select option {
-      color: black;
-      font-size: 1.5rem; }
-  #filterForm input {
-    width: 6rem;
-    color: black;
-    font-size: 1rem; }
-
-.containerFormulario {
-  width: 45rem;
-  background-color: darkblue;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px; }
-  .containerFormulario h2 {
-    height: 30%;
-    font-size: 2rem;
-    margin-top: 35px; }
-  .containerFormulario form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; }
-    .containerFormulario form label {
-      margin-top: 1rem;
-      font-size: 1.5rem; }
-    .containerFormulario form input {
-      color: black;
-      width: 16rem;
-      height: 30px;
-      font-size: 1rem; }
-    .containerFormulario form #registerSubmit {
-      width: 8rem;
-      color: black;
-      font-size: 1rem;
-      margin-bottom: 1rem; }
+    .nav .liContainer li {
+      padding: 10px; }
+      .nav .liContainer li:hover {
+        border-bottom: yellowgreen solid 1px;
+        border-radius: 10px; }
+    .nav .liContainer li a {
+      font-size: 2rem;
+      font-weight: bold; }
+      .nav .liContainer li a:hover {
+        text-shadow: yellowgreen 1px 1px 1px; }
+  .nav h2 {
+    width: 20%;
+    font-size: 4rem; }
+  .nav h3 {
+    align-self: center;
+    width: 20%;
+    font-size: 2.3rem; }
 
-#score {
-  width: 20%;
-  margin-right: 5%; }
+header {
+  margin-top: 80px; }
+  header #title {
+    font-size: 4rem;
+    text-align: center; }
 
-@media screen and (max-width: 420px) {
-  nav {
-    width: 100%; }
-  body .imcCalculator {
-    height: 400px;
-    margin-left: 0%;
-    margin-right: 0%; } }
-
-.container h1 {
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-size: 3rem; }
-
-.container .search form {
+.imcCalculator {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  width: auto; }
-  .container .search form input {
-    font-family: "Smooch Sans", sans-serif;
-    color: black;
-    height: 2rem;
-    font-size: 14px; }
-  .container .search form button {
-    color: #157203;
-    font-size: 1.5rem;
-    width: 2rem;
-    font-weight: bolder; }
-
-.li-container ul {
-  display: flex;
+  margin: auto;
   flex-direction: column;
-  gap: 20px; }
-  .li-container ul li {
-    border-bottom: black 1px solid;
+  justify-content: center; }
+  .imcCalculator h2 {
+    margin-top: 50px;
+    font-size: 2.5rem;
+    text-align: center; }
+  .imcCalculator form {
     display: flex;
     flex-direction: column;
-    background-color: darkblue;
-    width: 90%;
+    justify-content: center;
     margin: auto;
-    gap: 10px;
-    padding: 2%; }
-    .li-container ul li p {
-      word-wrap: break-word;
-      height: auto; }
-    .li-container ul li button {
-      align-self: flex-end;
-      margin-right: 30px;
-      color: #af0101;
-      font-size: 1.5rem;
-      width: 2rem;
-      font-weight: bolder; }
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px; }
+    .imcCalculator form input {
+      width: 16rem;
+      height: 2.5rem;
+      background-color: #99ff00;
+      color: #005e00;
+      font-size: 1.3rem; }
+      .imcCalculator form input:focus {
+        background-color: #99ff00;
+        color: #005e00; }
+    .imcCalculator form .submitButton {
+      background-color: transparent;
+      border: none;
+      color: #99ff00; }
+      .imcCalculator form .submitButton:hover {
+        text-shadow: yellowgreen 1px 1px 1px;
+        border-bottom: yellowgreen solid 1px;
+        border-radius: 10px; }
 
-.empty p {
-  text-align: center; }
+.container {
+  padding: 5%; }
+  .container h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: yellowgreen 1px solid; }
+  .container .empty p {
+    font-size: 2rem; }
+  .container .search {
+    margin-top: 70px; }
+    .container .search form {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px; }
+      .container .search form .btn-add {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-weight: bold;
+        color: #005e00;
+        background-color: #99ff00;
+        font-size: 2rem; }
+        .container .search form .btn-add:focus {
+          background-color: #99ff00;
+          color: #005e00; }
+      .container .search form input {
+        width: 16rem;
+        height: 2.5rem;
+        background-color: #99ff00;
+        color: #005e00;
+        font-size: 1.3rem; }
+        .container .search form input:focus {
+          background-color: #99ff00;
+          color: #005e00; }
+
+.li-container {
+  margin-top: 40px; }
+  .li-container ul li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: yellowgreen 1px solid;
+    margin-top: 20px; }
+    .li-container ul li p {
+      font-size: 2rem; }
+    .li-container ul li button {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-weight: bold;
+      color: #9e0000;
+      background-color: #99ff00;
+      font-size: 2rem; }
+      .li-container ul li button:focus {
+        background-color: #99ff00;
+        color: #9e0000; }

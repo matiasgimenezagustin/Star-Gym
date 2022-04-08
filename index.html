@@ -8,44 +8,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <title>Final Proyect</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <nav class="nav">
-        <h2>StarGym</h2>
-        <ul class="liContainer">
-            <li><a href="./index.html" class="link">Menu</a></li>
-            <li><a href="./html/register.html" class="link">Registro</a></li>
-            <li><a href="./html/pagina-de-prueba.html" class="link">To Do List</a></li>
-        </ul>
-        <h3 id="score">
-            Mis Puntos:
-        </h3>
-    </nav>
-    <header>
-        <h1 id="title">Bienvenido/a "User" a tu StarGym</h1>
-    </header>
-    <div class="imcCalculator">
-        <h2>Utiliza nuestra calculadora de Indice de masa corporal</h2>
-        <form id="calculatorForm">
-            <input type="text" id="tallValue" placeholder="Altura en centimetros">
-            <input type="text" placeholder="Peso en kg" id="widthValue">
-            <input type="submit" class="submitButton" id="getValue">
+    <main class="content">
+        <nav class="nav">
+            <h2>StarGym</h2>
+            <ul class="liContainer">
+                <li><a href="./index.html" class="link">Menu</a></li>
+                <li><a href="./html/register.html" class="link">Registro</a></li>
+                <li><a href="./html/pagina-de-prueba.html" class="link">To Do List</a></li>
+            </ul>
+            <h3 id="score">
+                Mis Puntos:
+            </h3>
+        </nav>
+        <header>
+            <h1 id="title">Bienvenido/a "User" a tu StarGym</h1>
+        </header>
+        <div class="imcCalculator">
+            <h2>Utiliza nuestra calculadora de Indice de masa corporal</h2>
+            <form id="calculatorForm">
+                <input type="text" id="tallValue" placeholder="Altura en centimetros_">
+                <input type="text" placeholder="Peso en kg_" id="widthValue">
+                <input type="submit" class="submitButton" id="getValue">
+            </form>
+            <p class="p" id="resultImc">Resultado:</p>
+            <p id="resultOfCalculator"></p>
+        </div>
+        <form id="filterForm">
+            <h2>Filtre los entrenamientos:</h2>
+            <select id="filterSelector">
+                <option value="principiante">Principiante</option>
+                <option value="vengador">Vengador</option>
+                <option value="challenger">Challenger</option>
+            </select>
+            <input type="submit">
         </form>
-        <p class="p" id="resultImc">Resultado:</p>
-        <p id="resultOfCalculator"></p>
-    </div>
-    <form id="filterForm">
-        <h2>Filtre los entrenamientos:</h2>
-        <select id="filterSelector">
-            <option value="principiante">Principiante</option>
-            <option value="vengador">Vengador</option>
-            <option value="challenger">Challenger</option>
-        </select>
-        <input type="submit">
-    </form>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/script.js"></script>

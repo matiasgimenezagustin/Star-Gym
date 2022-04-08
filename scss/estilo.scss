@@ -1,246 +1,184 @@
-
-$font-style: 'Smooch Sans', sans-serif;
-
-/*Normalize*/
 *{
-    padding: 0;
     margin: 0;
-    text-decoration: none;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: VT323;
+    color: rgb(153, 255, 0);
     list-style-type: none;
-    color: rgb(255, 255, 255);
-    font-family: $font-style;
+    text-decoration: none;
+
 }
+
 body{
-    background-color: #5700e4;
-    header{
-        h1{
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            font-size: 3rem;
-        }
-    }
-    .imcCalculator{
-        border-radius: 30px;
-        background-color: darkblue;
-        height: 25rem;
-        margin-left: 10%;
-        margin-right: 10%;
-        display: flex;
-        flex-direction: column;
-        h2{
-            height: 30%;
-            font-size: 2rem;
-            text-align: center;
-            margin-top: 35px;
-        }
-        form{
-            height: 70%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            input{
-                color: black;
-                width: 16rem;
-                height: 30px;
-                font-size: 1.5rem;
-            }
-            .submitButton{
-                width: 8rem;
-                color: black;
-                font-size: 1rem;
-            }
-        }
-        p{
-            text-align: center;
-            font-size: 1.5rem;
-        }
-        #containerResult{
-            margin-top: 5px;
-            p{
-                font-size: 1.5rem;
-                padding: 0px 20px 0px 20px;
-                margin-bottom: 20px;
-            }
-        }
-    }
-    div{
-        margin-top: 50px;
-        h2{
-            text-align: center;
-        }
-    }
-}
-
-.nav{
-    background-color: darkblue;
-    display: flex;
-    align-items: center;
+    background-color: rgb(0, 94, 0);
+    background-image: url(../img/patron-fallout.png);
+    position: relative;
+    height: 100%;
     width: 100%;
-    h2{
-        width: 30%;
-        text-align: center;
-        font-size: 2rem;
-    }
-    ul{
-        width: 70%;
+}
+
+
+
+.content{
+    position: relative;
+    padding: 5%;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: yellowgreen 1px solid;
+    .liContainer{
+        width: 60%;
         display: flex;
-        height: 70px;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        gap: 10%;
         li{
-            .link{
-                font-size: 1.5rem;
+            padding: 10px;
+            &:hover{
+                border-bottom: yellowgreen solid 1px;
+                border-radius: 10px;
+            }
+        }
+        li a{
+            font-size: 2rem;
+            font-weight: bold;
+            &:hover{
+                text-shadow: yellowgreen 1px 1px 1px;
+                
             }
         }
     }
+    h2{
+        width: 20%;
+        font-size: 4rem;
+    }
+    h3{
+        align-self: center;
+        width: 20%;
+        font-size: 2.3rem;
+    }
 }
-
-.nameOfActivity{
-    text-align: center;
-    font-size: 1.5rem;
+header{
+    margin-top: 80px;
+    #title{
+        font-size: 4rem;
+        text-align: center;
+    }
 }
-.diff{
-    text-align: center;
-    font-size: 1.3rem;
-}
-#filterForm{
-    margin-top: 50px;
+.imcCalculator{
     display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-    select{
-        color: black;
-        width: 10rem;
-        font-size: 1.5rem;
-        option{
-            color: black;
-            font-size: 1.5rem;
-        }
-    }
-    input{
-        width: 6rem;
-        color: black;
-        font-size: 1rem;
-    }
-}
-.containerFormulario{
-    width: 45rem;
-    background-color:darkblue;
     margin: auto;
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-radius: 30px;
     h2{
-        height: 30%;
-        font-size: 2rem;
-        margin-top: 35px;
+        margin-top: 50px;
+        font-size: 2.5rem;
+        text-align: center;
     }
     form{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: auto;
+        gap: 40px;
         align-items: center;
-        label{
-            margin-top: 1rem;
-            font-size: 1.5rem;
-        }
+        margin-top: 40px;
         input{
-            color: black;
             width: 16rem;
-            height: 30px;
-            font-size: 1rem;
+            height: 2.5rem;
+            background-color: rgb(153, 255, 0);
+            color: rgb(0, 94, 0);
+            font-size: 1.3rem;
+            &:focus{
+                background-color: rgb(153, 255, 0);
+                color: rgb(0, 94, 0);
+            }
         }
-        #registerSubmit{
-            width: 8rem;
-            color: black;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-    }
-}
-#score{
-    width: 20%;
-    margin-right: 5%;
-}
-
-@media screen and (max-width: 420px){
-    nav{
-        width: 100%;
-    }
-    body .imcCalculator{
-        height: 400px;
-        margin-left: 0%;
-        margin-right: 0%;
-    }
-
-}
-
-.container h1{
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    font-size: 3rem;
-    
-}
-
-.container .search{
-    form{
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        align-items: center;
-        width: auto;
-        input{
-            font-family: $font-style;
-            color: black;
-            height: 2rem;
-            font-size: 14px;
-        }
-        button{
-            color: rgb(21, 114, 3);
-            font-size: 1.5rem;
-            width: 2rem;
-            font-weight: bolder;
+        .submitButton{
+            background-color: transparent;
+            border: none;
+            color: rgb(153, 255, 0);
+            &:hover{
+                text-shadow: yellowgreen 1px 1px 1px;
+                border-bottom: yellowgreen solid 1px;
+                border-radius: 10px;
+            }
         }
     }
-    
 }
-.li-container{
-    ul{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        li{
-            border-bottom: black 1px solid;
-            display: flex;
-            flex-direction: column;
-            background-color: darkblue;
-            width: 90%;
+
+.container{
+    padding: 5%;
+    h1{
+        font-size: 4rem;
+        text-align: center;
+        margin-top: 10px;
+        border-bottom: yellowgreen 1px solid;
+    }
+    .empty{
+        p{
+            font-size: 2rem;
+        }
+    }
+    .search{
+        margin-top: 70px;
+        form{
             margin: auto;
-            gap: 10px;
-            padding: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            
+            .btn-add{
+                width: 2.5rem;
+                height: 2.5rem;
+                font-weight: bold;
+                color: rgb(0, 94, 0);
+                background-color: rgb(153, 255, 0);
+                font-size: 2rem;
+                &:focus{
+                    background-color: rgb(153, 255, 0);
+                    color: rgb(0, 94, 0);
+                }
+            }
+            input{
+                width: 16rem;
+                height: 2.5rem;
+                background-color: rgb(153, 255, 0);
+                color: rgb(0, 94, 0);
+                font-size: 1.3rem;
+                &:focus{
+                    background-color: rgb(153, 255, 0);
+                    color: rgb(0, 94, 0);
+                }
+            }
+        }
+    }
+}
+
+.li-container{
+    margin-top: 40px;
+    ul{
+        li{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: yellowgreen 1px solid;
+            margin-top: 20px;
             p{
-                word-wrap: break-word;
-                height: auto;
+                font-size: 2rem;
             }
             button{
-                align-self: flex-end;
-                margin-right: 30px;
-                color: rgb(175, 1, 1);
-                font-size: 1.5rem;
-                width: 2rem;
-                font-weight: bolder;
+                width: 2.5rem;
+                height: 2.5rem;
+                font-weight: bold;
+                color: rgb(158, 0, 0);
+                background-color: rgb(153, 255, 0);
+                font-size: 2rem;
+                &:focus{
+                    background-color: rgb(153, 255, 0);
+                    color: rgb(158, 0, 0);
+                }
             }
         }
-    }
-}
-.empty{
-    p{
-        text-align: center;
     }
 }
