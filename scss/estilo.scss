@@ -182,3 +182,37 @@ header{
         }
     }
 }
+
+/*Media Queries de 420px*/
+
+
+@media screen and (max-width: 420px){
+    .content{
+        .nav{
+            flex-direction: column;
+            h2{
+                font-size: 3.5rem;
+                text-align: center;
+                order: 1;
+            }
+            ul{
+                order: 3;
+                flex-direction: column;
+                justify-content: center;
+                align-self: center;
+                li{
+                    a{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            h3{
+                font-size: 1.7rem;
+                order: 2;
+                position: relative;
+                left: 70px;
+                bottom: 50px;
+            }
+        }
+    }
+}

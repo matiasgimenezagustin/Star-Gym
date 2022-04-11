@@ -142,3 +142,25 @@ header {
       .li-container ul li button:focus {
         background-color: #99ff00;
         color: #9e0000; }
+
+/*Media Queries de 420px*/
+@media screen and (max-width: 420px) {
+  .content .nav {
+    flex-direction: column; }
+    .content .nav h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      order: 1; }
+    .content .nav ul {
+      order: 3;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center; }
+      .content .nav ul li a {
+        font-size: 1.5rem; }
+    .content .nav h3 {
+      font-size: 1.7rem;
+      order: 2;
+      position: relative;
+      left: 70px;
+      bottom: 50px; } }
