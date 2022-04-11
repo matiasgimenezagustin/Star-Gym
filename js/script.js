@@ -254,3 +254,10 @@ function validarFormFilter(e){
     dificultyFilter();
 
 }
+
+
+let titlePage = document.getElementById("title")
+
+let getUsername = JSON.parse(localStorage.getItem("username"));
+
+titlePage.innerText = "Bienvenido/a " + getUsername + " StarGym";
