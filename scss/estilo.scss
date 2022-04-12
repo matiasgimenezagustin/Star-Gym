@@ -19,7 +19,7 @@ body{
 
 
 
-.content{
+.content, .bodyRegister{
     position: relative;
     padding: 5%;
 }
@@ -60,7 +60,7 @@ body{
 }
 header{
     margin-top: 80px;
-    #title{
+    .title{
         font-size: 4rem;
         text-align: center;
     }
@@ -187,31 +187,60 @@ header{
 
 
 @media screen and (max-width: 420px){
-    .content{
-        .nav{
+    .nav{
+        flex-direction: column;
+        h2{
+            font-size: 3.5rem;
+            text-align: center;
+            order: 1;
+        }
+        ul{
+            order: 3;
             flex-direction: column;
-            h2{
-                font-size: 3.5rem;
-                text-align: center;
-                order: 1;
-            }
-            ul{
-                order: 3;
-                flex-direction: column;
-                justify-content: center;
-                align-self: center;
-                li{
-                    a{
-                        font-size: 1.5rem;
-                    }
+            justify-content: center;
+            align-self: center;
+            li{
+                a{
+                    font-size: 1.5rem;
                 }
             }
-            h3{
+        }
+        h3{
+            font-size: 1.7rem;
+            order: 2;
+            position: relative;
+            left: 70px;
+            bottom: 50px;
+        }
+    }
+    header{
+        .title{
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+    }
+    .containerFormulario{
+        h2{
+            text-align: center;
+        }
+        #registerForm{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            label{
                 font-size: 1.7rem;
-                order: 2;
-                position: relative;
-                left: 70px;
-                bottom: 50px;
+                margin-top: 30px;
+            }
+            input{
+                width: 16rem;
+                height: 2.5rem;
+                background-color: rgb(153, 255, 0);
+                color: rgb(0, 94, 0);
+                font-size: 1.3rem;
+                &:focus{
+                    background-color: rgb(153, 255, 0);
+                    color: rgb(0, 94, 0);
+                }
             }
         }
     }
