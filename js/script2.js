@@ -1,3 +1,15 @@
+const local = (key, value) => {
+
+    localStorage.setItem(key, JSON.stringify(value));
+
+}
+
+const getLocal = (key) => {
+
+    return JSON.parse(localStorage.getItem(key))
+
+}
+
 let registerForm = document.getElementById("registerForm");
 
 registerForm.addEventListener("submit", registrar)
@@ -15,20 +27,11 @@ function registrar(e){
 
     localStorage.setItem("username", JSON.stringify(username));
 
-    
-
-
 }
 
-const local = (key, value) => {
+let score = getLocal("score");
 
-    localStorage.setItem(key, JSON.stringify(value));
+let scoreId = document.getElementById("scoreRegister");
 
-}
-
-
-
-local( "eter", "magia")
-
-let getEter = JSON.parse(localStorage.getItem("eter"));
+scoreId.innerText = "Mis puntos: " + score;
 

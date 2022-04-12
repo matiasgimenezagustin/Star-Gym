@@ -1,9 +1,44 @@
+
+$paleta:(
+verde-oscuro: rgb(0, 94, 0), 
+verde-claro: rgb(153, 255, 0),
+rojo-oscuro: rgb(158, 0, 0));
+
+$font-style: VT323;
+
+
+@mixin input-desktop {
+    width: 24rem;
+    height: 4.5rem;
+    background-color: map-get($paleta, verde-claro );
+    color: map-get($paleta, verde-oscuro );
+    font-size: 2rem;
+    &:focus{
+        background-color: map-get($paleta, verde-claro );
+        color: map-get($paleta, verde-oscuro );
+    }
+}
+@mixin submit-boton-desktop{
+    background-color: transparent;
+    border: none;
+    color: map-get($paleta, verde-claro );
+    font-size: 2rem;
+    &:hover{
+        text-shadow: map-get($paleta, verde-claro ) 1px 1px 1px;
+        border-bottom: map-get($paleta, verde-claro ) solid 1px;
+        border-radius: 10px;
+    }
+}
+
+
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: VT323;
-    color: rgb(153, 255, 0);
+    font-family: $font-style;
+    color: map-get($paleta, verde-claro );
     list-style-type: none;
     text-decoration: none;
 
@@ -26,7 +61,7 @@ body{
 .nav{
     display: flex;
     justify-content: space-around;
-    border-bottom: yellowgreen 1px solid;
+    border-bottom: map-get($paleta, verde-claro ) 1px solid;
     .liContainer{
         width: 60%;
         display: flex;
@@ -35,33 +70,33 @@ body{
         li{
             padding: 10px;
             &:hover{
-                border-bottom: yellowgreen solid 1px;
+                border-bottom: map-get($paleta, verde-claro ) solid 1px;
                 border-radius: 10px;
             }
         }
         li a{
-            font-size: 2rem;
+            font-size: 4rem;
             font-weight: bold;
             &:hover{
-                text-shadow: yellowgreen 1px 1px 1px;
+                text-shadow: map-get($paleta, verde-claro ) 1px 1px 1px;
                 
             }
         }
     }
     h2{
         width: 20%;
-        font-size: 4rem;
+        font-size: 7rem;
     }
     h3{
         align-self: center;
         width: 20%;
-        font-size: 2.3rem;
+        font-size: 3.3rem;
     }
 }
 header{
     margin-top: 80px;
     .title{
-        font-size: 4rem;
+        font-size: 7rem;
         text-align: center;
     }
 }
@@ -84,25 +119,10 @@ header{
         align-items: center;
         margin-top: 40px;
         input{
-            width: 16rem;
-            height: 2.5rem;
-            background-color: rgb(153, 255, 0);
-            color: rgb(0, 94, 0);
-            font-size: 1.3rem;
-            &:focus{
-                background-color: rgb(153, 255, 0);
-                color: rgb(0, 94, 0);
-            }
+            @include input-desktop;
         }
         .submitButton{
-            background-color: transparent;
-            border: none;
-            color: rgb(153, 255, 0);
-            &:hover{
-                text-shadow: yellowgreen 1px 1px 1px;
-                border-bottom: yellowgreen solid 1px;
-                border-radius: 10px;
-            }
+            @include submit-boton-desktop;
         }
     }
 }
@@ -113,7 +133,7 @@ header{
         font-size: 4rem;
         text-align: center;
         margin-top: 10px;
-        border-bottom: yellowgreen 1px solid;
+        border-bottom: map-get($paleta, verde-claro ) 1px solid;
     }
     .empty{
         p{
@@ -134,21 +154,21 @@ header{
                 height: 2.5rem;
                 font-weight: bold;
                 color: rgb(0, 94, 0);
-                background-color: rgb(153, 255, 0);
+                background-color: map-get($paleta, verde-claro );
                 font-size: 2rem;
                 &:focus{
-                    background-color: rgb(153, 255, 0);
+                    background-color: map-get($paleta, verde-claro );
                     color: rgb(0, 94, 0);
                 }
             }
             input{
                 width: 16rem;
                 height: 2.5rem;
-                background-color: rgb(153, 255, 0);
+                background-color: map-get($paleta, verde-claro );
                 color: rgb(0, 94, 0);
                 font-size: 1.3rem;
                 &:focus{
-                    background-color: rgb(153, 255, 0);
+                    background-color: map-get($paleta, verde-claro );
                     color: rgb(0, 94, 0);
                 }
             }
@@ -162,7 +182,7 @@ header{
         li{
             display: flex;
             justify-content: space-between;
-            border-bottom: yellowgreen 1px solid;
+            border-bottom: map-get($paleta, verde-claro ) 1px solid;
             margin-top: 20px;
             p{
                 font-size: 2rem;
@@ -172,13 +192,29 @@ header{
                 height: 2.5rem;
                 font-weight: bold;
                 color: rgb(158, 0, 0);
-                background-color: rgb(153, 255, 0);
+                background-color: map-get($paleta, verde-claro );
                 font-size: 2rem;
                 &:focus{
-                    background-color: rgb(153, 255, 0);
+                    background-color: map-get($paleta, verde-claro );
                     color: rgb(158, 0, 0);
                 }
             }
+        }
+    }
+}
+
+.containerFormulario{
+    #registerForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label{
+            font-size: 3.5rem;
+            margin-top: 40px;
+        }
+        input{
+            @include input-desktop();
         }
     }
 }
@@ -220,13 +256,11 @@ header{
         }
     }
     .containerFormulario{
-        h2{
-            text-align: center;
-        }
         #registerForm{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             label{
                 font-size: 1.7rem;
                 margin-top: 30px;
@@ -234,12 +268,13 @@ header{
             input{
                 width: 16rem;
                 height: 2.5rem;
-                background-color: rgb(153, 255, 0);
+                background-color: map-get($paleta, verde-claro );
                 color: rgb(0, 94, 0);
                 font-size: 1.3rem;
+                margin-bottom: 20px;
                 &:focus{
-                    background-color: rgb(153, 255, 0);
-                    color: rgb(0, 94, 0);
+                    background-color: map-get($paleta, verde-claro );
+                    color: map-get($paleta, verde-oscuro );
                 }
             }
         }

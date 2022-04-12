@@ -1,9 +1,16 @@
 
-let tall, imc, weith, activitySelected;
 
-let scoreImc = 0;
+const local = (key, value) => {
 
-let score = 0;
+    localStorage.setItem(key, JSON.stringify(value));
+
+}
+
+const getLocal = (key) => {
+
+    return JSON.parse(localStorage.getItem(key))
+
+}
 
 const scoreAccountant = () => {
 
@@ -12,6 +19,15 @@ const scoreAccountant = () => {
     scoreId.innerText = "Mis puntos: " + score; 
 
 }
+
+let tall, imc, weith, activitySelected, score, scoreImc;
+
+score = getLocal("score");
+
+scoreImc = getLocal("scoreImc");
+
+scoreAccountant();
+
 
 const calculator = () => {
 
@@ -130,7 +146,7 @@ function validarFormulario(e){
 
 const newAchievementCalculator = () =>{
     
-    if (scoreImc >= 1){
+    if (getLocal("scoreImc") >= 1){
 
         console.log("scoreImc " + scoreImc);
 
@@ -139,7 +155,12 @@ const newAchievementCalculator = () =>{
 
         scoreImc += 1;
 
+        local("scoreImc", scoreImc)
+
         score += scoreImc;
+
+        local("score", score)
+
 
         scoreAccountant();
 
@@ -155,7 +176,6 @@ const newAchievementCalculator = () =>{
 
         })
 
-        console.log(scoreImc)
     }
 }    
 
@@ -258,6 +278,11 @@ function validarFormFilter(e){
 
 let titlePage = document.getElementById("title")
 
-let getUsername = JSON.parse(localStorage.getItem("username"));
+let getUsername = getLocal("username");
 
 titlePage.innerText = "Bienvenido/a " + getUsername + " StarGym";
+
+
+
+
+

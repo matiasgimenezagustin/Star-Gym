@@ -21,7 +21,7 @@ body {
 .nav {
   display: flex;
   justify-content: space-around;
-  border-bottom: yellowgreen 1px solid; }
+  border-bottom: #99ff00 1px solid; }
   .nav .liContainer {
     width: 60%;
     display: flex;
@@ -30,25 +30,25 @@ body {
     .nav .liContainer li {
       padding: 10px; }
       .nav .liContainer li:hover {
-        border-bottom: yellowgreen solid 1px;
+        border-bottom: #99ff00 solid 1px;
         border-radius: 10px; }
     .nav .liContainer li a {
-      font-size: 2rem;
+      font-size: 4rem;
       font-weight: bold; }
       .nav .liContainer li a:hover {
-        text-shadow: yellowgreen 1px 1px 1px; }
+        text-shadow: #99ff00 1px 1px 1px; }
   .nav h2 {
     width: 20%;
-    font-size: 4rem; }
+    font-size: 7rem; }
   .nav h3 {
     align-self: center;
     width: 20%;
-    font-size: 2.3rem; }
+    font-size: 3.3rem; }
 
 header {
   margin-top: 80px; }
   header .title {
-    font-size: 4rem;
+    font-size: 7rem;
     text-align: center; }
 
 .imcCalculator {
@@ -69,21 +69,22 @@ header {
     align-items: center;
     margin-top: 40px; }
     .imcCalculator form input {
-      width: 16rem;
-      height: 2.5rem;
+      width: 24rem;
+      height: 4.5rem;
       background-color: #99ff00;
       color: #005e00;
-      font-size: 1.3rem; }
+      font-size: 2rem; }
       .imcCalculator form input:focus {
         background-color: #99ff00;
         color: #005e00; }
     .imcCalculator form .submitButton {
       background-color: transparent;
       border: none;
-      color: #99ff00; }
+      color: #99ff00;
+      font-size: 2rem; }
       .imcCalculator form .submitButton:hover {
-        text-shadow: yellowgreen 1px 1px 1px;
-        border-bottom: yellowgreen solid 1px;
+        text-shadow: #99ff00 1px 1px 1px;
+        border-bottom: #99ff00 solid 1px;
         border-radius: 10px; }
 
 .container {
@@ -92,7 +93,7 @@ header {
     font-size: 4rem;
     text-align: center;
     margin-top: 10px;
-    border-bottom: yellowgreen 1px solid; }
+    border-bottom: #99ff00 1px solid; }
   .container .empty p {
     font-size: 2rem; }
   .container .search {
@@ -128,7 +129,7 @@ header {
   .li-container ul li {
     display: flex;
     justify-content: space-between;
-    border-bottom: yellowgreen 1px solid;
+    border-bottom: #99ff00 1px solid;
     margin-top: 20px; }
     .li-container ul li p {
       font-size: 2rem; }
@@ -142,6 +143,24 @@ header {
       .li-container ul li button:focus {
         background-color: #99ff00;
         color: #9e0000; }
+
+.containerFormulario #registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .containerFormulario #registerForm label {
+    font-size: 3.5rem;
+    margin-top: 40px; }
+  .containerFormulario #registerForm input {
+    width: 24rem;
+    height: 4.5rem;
+    background-color: #99ff00;
+    color: #005e00;
+    font-size: 2rem; }
+    .containerFormulario #registerForm input:focus {
+      background-color: #99ff00;
+      color: #005e00; }
 
 /*Media Queries de 420px*/
 @media screen and (max-width: 420px) {
@@ -167,12 +186,11 @@ header {
   header .title {
     font-size: 2.2rem;
     margin-bottom: 40px; }
-  .containerFormulario h2 {
-    text-align: center; }
   .containerFormulario #registerForm {
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    align-items: center; }
     .containerFormulario #registerForm label {
       font-size: 1.7rem;
       margin-top: 30px; }
@@ -181,7 +199,8 @@ header {
       height: 2.5rem;
       background-color: #99ff00;
       color: #005e00;
-      font-size: 1.3rem; }
+      font-size: 1.3rem;
+      margin-bottom: 20px; }
       .containerFormulario #registerForm input:focus {
         background-color: #99ff00;
         color: #005e00; } }
