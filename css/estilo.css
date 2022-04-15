@@ -1,14 +1,19 @@
+:root {
+  --color-claro: #99ff00;
+  --color-oscuro: #005e00;
+  --color-focus: #70b607; }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: VT323;
-  color: #99ff00;
+  color: var(--color-claro);
   list-style-type: none;
   text-decoration: none; }
 
 body {
-  background-color: #005e00;
+  background-color: var(--color-oscuro);
   background-image: url(../img/patron-fallout.png);
   position: relative;
   height: 100%;
@@ -21,29 +26,33 @@ body {
 .nav {
   display: flex;
   justify-content: space-around;
-  border-bottom: #99ff00 1px solid; }
+  border-bottom: var(--color-claro) 1px solid; }
+  .nav .logo {
+    order: 1; }
   .nav .liContainer {
     width: 60%;
     display: flex;
     justify-content: space-around;
-    align-items: center; }
+    align-items: center;
+    order: 2; }
     .nav .liContainer li {
       padding: 10px; }
       .nav .liContainer li:hover {
-        border-bottom: #99ff00 solid 1px;
+        border-bottom: var(--color-claro) solid 1px;
         border-radius: 10px; }
     .nav .liContainer li a {
       font-size: 4rem;
       font-weight: bold; }
       .nav .liContainer li a:hover {
-        text-shadow: #99ff00 1px 1px 1px; }
+        text-shadow: var(--color-claro) 1px 1px 1px; }
   .nav h2 {
     width: 20%;
     font-size: 7rem; }
   .nav h3 {
     align-self: center;
     width: 20%;
-    font-size: 3.3rem; }
+    font-size: 3.3rem;
+    order: 3; }
 
 header {
   margin-top: 80px; }
@@ -71,20 +80,20 @@ header {
     .imcCalculator form input {
       width: 24rem;
       height: 4.5rem;
-      background-color: #99ff00;
-      color: #005e00;
+      background-color: var(--color-claro);
+      color: var(--color-oscuro);
       font-size: 2rem; }
       .imcCalculator form input:focus {
-        background-color: #99ff00;
-        color: #005e00; }
+        background-color: var(--color-claro);
+        color: var(--color-oscuro); }
     .imcCalculator form .submitButton {
       background-color: transparent;
       border: none;
-      color: #99ff00;
+      color: var(--color-claro);
       font-size: 2rem; }
       .imcCalculator form .submitButton:hover {
-        text-shadow: #99ff00 1px 1px 1px;
-        border-bottom: #99ff00 solid 1px;
+        text-shadow: var(--color-claro) 1px 1px 1px;
+        border-bottom: var(--color-claro) solid 1px;
         border-radius: 10px; }
 
 .container {
@@ -93,7 +102,7 @@ header {
     font-size: 4rem;
     text-align: center;
     margin-top: 10px;
-    border-bottom: #99ff00 1px solid; }
+    border-bottom: var(--color-claro) 1px solid; }
   .container .empty p {
     font-size: 2rem; }
   .container .search {
@@ -108,28 +117,28 @@ header {
         width: 2.5rem;
         height: 2.5rem;
         font-weight: bold;
-        color: #005e00;
-        background-color: #99ff00;
+        color: var(--color-oscuro);
+        background-color: var(--color-claro);
         font-size: 2rem; }
         .container .search form .btn-add:focus {
-          background-color: #99ff00;
-          color: #005e00; }
+          background-color: var(--color-claro);
+          color: var(--color-oscuro); }
       .container .search form input {
         width: 16rem;
         height: 2.5rem;
-        background-color: #99ff00;
-        color: #005e00;
+        background-color: var(--color-claro);
+        color: var(--color-oscuro);
         font-size: 1.3rem; }
         .container .search form input:focus {
-          background-color: #99ff00;
-          color: #005e00; }
+          background-color: var(--color-claro);
+          color: var(--color-oscuro); }
 
 .li-container {
   margin-top: 40px; }
   .li-container ul li {
     display: flex;
     justify-content: space-between;
-    border-bottom: #99ff00 1px solid;
+    border-bottom: var(--color-claro) 1px solid;
     margin-top: 20px; }
     .li-container ul li p {
       font-size: 2rem; }
@@ -138,11 +147,21 @@ header {
       height: 2.5rem;
       font-weight: bold;
       color: #9e0000;
-      background-color: #99ff00;
+      background-color: var(--color-claro);
       font-size: 2rem; }
       .li-container ul li button:focus {
-        background-color: #99ff00;
+        background-color: var(--color-claro);
         color: #9e0000; }
+
+#switchButton {
+  width: 24rem;
+  height: 4.5rem;
+  background-color: var(--color-claro);
+  color: var(--color-oscuro);
+  font-size: 2rem; }
+  #switchButton:focus {
+    background-color: var(--color-claro);
+    color: var(--color-oscuro); }
 
 .containerFormulario #registerForm {
   display: flex;
@@ -155,34 +174,44 @@ header {
   .containerFormulario #registerForm input {
     width: 24rem;
     height: 4.5rem;
-    background-color: #99ff00;
-    color: #005e00;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
     font-size: 2rem; }
     .containerFormulario #registerForm input:focus {
-      background-color: #99ff00;
-      color: #005e00; }
+      background-color: var(--color-claro);
+      color: var(--color-oscuro); }
 
 /*Media Queries de 420px*/
 @media screen and (max-width: 420px) {
+  #switchButton {
+    width: 16rem;
+    height: 2.5rem;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+    font-size: 1.3rem;
+    margin-bottom: 20px; }
+    #switchButton:focus {
+      background-color: var(--color-claro);
+      color: var(--color-oscuro); }
   .nav {
     flex-direction: column; }
-    .nav h2 {
-      font-size: 3.5rem;
-      text-align: center;
-      order: 1; }
+    .nav .logo {
+      order: 1;
+      width: 280px;
+      margin: auto; }
     .nav ul {
-      order: 3;
+      order: 2;
       flex-direction: column;
       justify-content: center;
       align-self: center; }
       .nav ul li a {
-        font-size: 1.5rem; }
+        font-size: 1rem; }
     .nav h3 {
-      font-size: 1.7rem;
-      order: 2;
-      position: relative;
-      left: 70px;
-      bottom: 50px; }
+      font-size: 2rem;
+      order: 3;
+      width: 100%;
+      align-self: center;
+      text-align: center; }
   header .title {
     font-size: 2.2rem;
     margin-bottom: 40px; }
@@ -197,13 +226,25 @@ header {
     .containerFormulario #registerForm input {
       width: 16rem;
       height: 2.5rem;
-      background-color: #99ff00;
-      color: #005e00;
+      background-color: var(--color-claro);
+      color: var(--color-oscuro);
       font-size: 1.3rem;
       margin-bottom: 20px; }
       .containerFormulario #registerForm input:focus {
-        background-color: #99ff00;
-        color: #005e00; } }
+        background-color: var(--color-claro);
+        color: var(--color-oscuro); }
+  .nav .liContainer li a {
+    font-size: 2rem; }
+  .imcCalculator form input {
+    width: 16rem;
+    height: 2.5rem;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+    font-size: 1.3rem;
+    margin-bottom: 20px; }
+    .imcCalculator form input:focus {
+      background-color: var(--color-claro);
+      color: var(--color-oscuro); } }
 
 .here {
-  color: #70b607; }
+  color: var(--color-focus); }

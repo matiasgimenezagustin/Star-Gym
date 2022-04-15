@@ -1,9 +1,17 @@
-
+:root {
+    --color-claro: #99ff00;
+    --color-oscuro: #005e00;
+    --color-focus: #70b607;
+}
 $paleta:(
-verde-oscuro: rgb(0, 94, 0), 
-verde-claro: rgb(153, 255, 0),
-verde-focus: rgb(112, 182, 7),
-rojo-oscuro: rgb(158, 0, 0));
+verde-oscuro: var(--color-oscuro), 
+verde-claro: var(--color-claro),
+verde-focus: var(--color-focus),
+rojo-oscuro: rgb(158, 0, 0),
+color-verdoso: #dd5a5a
+);
+
+
 
 $font-style: VT323;
 
@@ -14,6 +22,18 @@ $font-style: VT323;
     background-color: map-get($paleta, verde-claro );
     color: map-get($paleta, verde-oscuro );
     font-size: 2rem;
+    &:focus{
+        background-color: map-get($paleta, verde-claro );
+        color: map-get($paleta, verde-oscuro );
+    }
+}
+@mixin input-mobible {
+    width: 16rem;
+    height: 2.5rem;
+    background-color: map-get($paleta, verde-claro );
+    color: map-get($paleta , verde-oscuro );
+    font-size: 1.3rem;
+    margin-bottom: 20px;
     &:focus{
         background-color: map-get($paleta, verde-claro );
         color: map-get($paleta, verde-oscuro );
@@ -46,7 +66,7 @@ $font-style: VT323;
 }
 
 body{
-    background-color: rgb(0, 94, 0);
+    background-color: map-get($paleta, verde-oscuro );
     background-image: url(../img/patron-fallout.png);
     position: relative;
     height: 100%;
@@ -63,11 +83,15 @@ body{
     display: flex;
     justify-content: space-around;
     border-bottom: map-get($paleta, verde-claro ) 1px solid;
+    .logo{
+        order: 1;
+    }
     .liContainer{
         width: 60%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        order: 2;
         li{
             padding: 10px;
             &:hover{
@@ -92,6 +116,7 @@ body{
         align-self: center;
         width: 20%;
         font-size: 3.3rem;
+        order: 3;
     }
 }
 header{
@@ -154,23 +179,23 @@ header{
                 width: 2.5rem;
                 height: 2.5rem;
                 font-weight: bold;
-                color: rgb(0, 94, 0);
+                color: map-get($paleta, verde-oscuro );
                 background-color: map-get($paleta, verde-claro );
                 font-size: 2rem;
                 &:focus{
                     background-color: map-get($paleta, verde-claro );
-                    color: rgb(0, 94, 0);
+                    color: map-get($paleta, verde-oscuro );
                 }
             }
             input{
                 width: 16rem;
                 height: 2.5rem;
                 background-color: map-get($paleta, verde-claro );
-                color: rgb(0, 94, 0);
+                color: map-get($paleta, verde-oscuro );
                 font-size: 1.3rem;
                 &:focus{
                     background-color: map-get($paleta, verde-claro );
-                    color: rgb(0, 94, 0);
+                    color: map-get($paleta, verde-oscuro );
                 }
             }
         }
@@ -203,7 +228,9 @@ header{
         }
     }
 }
-
+#switchButton{
+    @include input-desktop;
+}
 .containerFormulario{
     #registerForm{
         display: flex;
@@ -224,30 +251,33 @@ header{
 
 
 @media screen and (max-width: 420px){
+    #switchButton{
+        @include input-mobible;
+    }
     .nav{
-        flex-direction: column;
-        h2{
-            font-size: 3.5rem;
-            text-align: center;
+        .logo{
             order: 1;
+            width: 280px;
+            margin: auto;
         }
+        flex-direction: column;
         ul{
-            order: 3;
+            order: 2;
             flex-direction: column;
             justify-content: center;
             align-self: center;
             li{
                 a{
-                    font-size: 1.5rem;
+                    font-size: 1rem;
                 }
             }
         }
         h3{
-            font-size: 1.7rem;
-            order: 2;
-            position: relative;
-            left: 70px;
-            bottom: 50px;
+            font-size: 2rem;
+            order: 3;
+            width: 100%;
+            align-self: center;
+            text-align: center;
         }
     }
     header{
@@ -267,18 +297,15 @@ header{
                 margin-top: 30px;
             }
             input{
-                width: 16rem;
-                height: 2.5rem;
-                background-color: map-get($paleta, verde-claro );
-                color: rgb(0, 94, 0);
-                font-size: 1.3rem;
-                margin-bottom: 20px;
-                &:focus{
-                    background-color: map-get($paleta, verde-claro );
-                    color: map-get($paleta, verde-oscuro );
-                }
+                @include input-mobible;
             }
         }
+    }
+    .nav .liContainer li a{
+        font-size: 2rem;
+    }
+    .imcCalculator form input{
+        @include input-mobible;
     }
 }
 
