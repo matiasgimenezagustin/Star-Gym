@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <title>pagina prueba demo</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <main class="content">
+        <nav class="nav">
+            <img id="logo" src="./img/Your-Helper-logo.png" alt="Logo de Your Helper" class="logo">
+            <h3 id="score">
+                Mis Puntos:
+            </h3>
+            <button id="switchButton">
+                cambiar color
+            </button>
+        </nav>
+        <header>
+            <h1 id="title" class="title">Bienvenido/a "User" a tu StarGym</h1>
+        </header>
+        <main class="containerFormulario">
+            <form action="" id="registerForm">
+                <label for="name">Ingresa tu nickname</label>
+                <input name="name"  type="text" placeholder="ejemplo: The Mandalorian">
+                <div>
+                    <h3>Selecciona tu imagen:</h3>
+                    <img src="../img/add-icon.png" alt="Imagen de Sumar">
+                </div>
+                <input type="submit" id="registerSubmit">
+            </form>
+        </main>
+        <div class="imcCalculator">
+            <h2>Utiliza nuestra calculadora de Indice de masa corporal</h2>
+            <form id="calculatorForm">
+                <input type="text" id="tallValue" placeholder="Altura en centimetros_">
+                <input type="text" placeholder="Peso en kg_" id="widthValue">
+                <input type="submit" class="submitButton" id="getValue">
+            </form>
+            <p class="p" id="resultImc">Resultado:</p>
+            <p id="resultOfCalculator"></p>
+        </div>
+        
+        
+    </main>
+    <div class="container">
+        <h1>Lista de Misiones</h1>
+        <div class="search">
+            <form action="">
+                <input type="text" id="input" placeholder="Agregar Mision">
+                <button class="btn-add">+</button>
+            </form>
+        </div>
+        <div class="li-container">
+            <ul id="ul">
+
+            </ul>
+        </div>
+        <div class="empty">
+            <p>no tienes Misiones pendientes.</p>
+        </div>
+    </div>
+    <button id="clear">
+        Clear Local
+    </button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/scriptIndex.js"></script>
+</body>
+</html>

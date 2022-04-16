@@ -1,45 +1,93 @@
-const switchButton = document.getElementById("switchButton");
 
-/* const logo = document.getElementById("logo"); */
+//Variables Globales importantes
 
-switchButton.addEventListener("click", switchTheme);
+let tall, imc, weith, activitySelected, score, scoreImc, theme;
 
-const style = document.documentElement.style
 
-function switchTheme(e){
-        
-    e.preventDefault();
-        
-    let formulario = e.target;
-    console.log("funciona")
-    switcher()
-}
-const switcher = () => {
-    if( style.getPropertyValue("--color-claro") == "#99ff00"){
-        style.setProperty("--color-claro", "#fcf65a")
-        style.setProperty("--color-oscuro", "#b1813b")
-        style.setProperty("--color-focus", "#ffae00") 
-        document.getElementById("logo").src = "./img/Your-Helper-logo-yellowTheme.png"
-    }
-    else{
-        style.setProperty("--color-claro", "#99ff00")
-        style.setProperty("--color-oscuro", "#005e00")
-        style.setProperty("--color-focus", "#70b607") 
-        document.getElementById("logo").src = "./img/Your-Helper-logo.png"
-    }
-}
-
+/*Funciones para entrar y salir del LocalStorage*/
 
 const local = (key, value) => {
 
     localStorage.setItem(key, JSON.stringify(value));
-
+    
 }
 
 const getLocal = (key) => {
 
     return JSON.parse(localStorage.getItem(key))
 
+}
+
+//Username Protocol
+
+const validateUser = () =>{
+
+    let titlePage = document.getElementById("title")
+
+    let getUsername = getLocal("username");
+
+    if ( (getUsername == null) || (getUsername == undefined)){
+
+        getUsername = "user";
+    }
+
+    titlePage.innerText = "Bienvenido/a " + getUsername + " StarGym";
+
+}
+
+
+/* localStorage.clear() */
+
+const switchButton = document.getElementById("switchButton");
+
+switchButton.addEventListener("click", switchTheme);
+
+const style = document.documentElement.style;
+
+function switchTheme(){
+
+    switcher();
+
+}
+
+
+const switcher = () => {
+
+    theme = getLocal("theme");
+
+    if(( style.getPropertyValue("--color-claro") == "#99ff00") || (theme == false)){
+
+        local("theme", false);
+
+        style.setProperty("--color-claro", "#fcf65a");
+
+        style.setProperty("--color-oscuro", "#b1813b");
+
+        style.setProperty("--color-focus", "#ffae00");
+        
+        document.getElementById("logo").src = "./img/Your-Helper-logo-yellowTheme.png";
+
+        console.log(theme + " el theme es marron")
+
+
+
+    }
+    else if (theme == false) {
+
+        local("theme", true);
+
+        style.setProperty("--color-claro", "#99ff00");
+
+        style.setProperty("--color-oscuro", "#005e00");
+
+        style.setProperty("--color-focus", "#70b607");
+
+        document.getElementById("logo").src = "./img/Your-Helper-logo.png";
+
+        console.log(theme + " el theme es verde")
+
+
+    }
 }
 
 const scoreAccountant = () => {
@@ -50,9 +98,18 @@ const scoreAccountant = () => {
 
 }
 
-let tall, imc, weith, activitySelected, score, scoreImc;
+const validateScore = () =>{
 
-score = getLocal("score");
+    score = getLocal("score");
+
+    if ((score == null) || (score == NaN)){
+
+        score = 0;
+        
+    }
+}
+
+validateScore();
 
 scoreImc = getLocal("scoreImc");
 
@@ -306,11 +363,7 @@ function validarFormFilter(e){
 }
 
 
-let titlePage = document.getElementById("title")
 
-let getUsername = getLocal("username");
-
-titlePage.innerText = "Bienvenido/a " + getUsername + " StarGym";
 
 
 
