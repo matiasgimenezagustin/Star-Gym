@@ -23,6 +23,12 @@ body {
   height: 100%;
   width: 100%; }
 
+.mainSection {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 30px; }
+
 .content, .bodyRegister {
   position: relative;
   padding: 5%; }
@@ -32,7 +38,8 @@ body {
   justify-content: space-around;
   border-bottom: var(--color-claro) 1px solid; }
   .nav .logo {
-    order: 1; }
+    order: 1;
+    width: 400px; }
   .nav .liContainer {
     width: 60%;
     display: flex;
@@ -61,6 +68,7 @@ body {
     background-color: var(--color-claro);
     color: var(--color-oscuro);
     font-size: 2rem;
+    border-radius: 20px;
     order: 3;
     border-radius: 20px;
     width: 14rem; }
@@ -78,7 +86,11 @@ header {
   display: flex;
   margin: auto;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  border: solid 2px;
+  width: 40%;
+  height: 43rem;
+  margin-right: 0; }
   .imcCalculator h2 {
     margin-top: 50px;
     font-size: 2.5rem;
@@ -96,7 +108,8 @@ header {
       height: 4.5rem;
       background-color: var(--color-claro);
       color: var(--color-oscuro);
-      font-size: 2rem; }
+      font-size: 2rem;
+      border-radius: 20px; }
       .imcCalculator form input:focus {
         background-color: var(--color-claro);
         color: var(--color-oscuro); }
@@ -104,11 +117,17 @@ header {
       background-color: transparent;
       border: none;
       color: var(--color-claro);
-      font-size: 2rem; }
+      font-size: 2rem;
+      width: 18rem; }
       .imcCalculator form .submitButton:hover {
         text-shadow: var(--color-claro) 1px 1px 1px;
         border-bottom: var(--color-claro) solid 1px;
         border-radius: 10px; }
+
+#resultOfCalculator {
+  font-size: 2rem;
+  align-self: center;
+  margin-top: 30px; }
 
 .container {
   padding: 5%; }
@@ -128,8 +147,9 @@ header {
       align-items: center;
       gap: 50px; }
       .container .search form .btn-add {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 20px;
         font-weight: bold;
         color: var(--color-oscuro);
         background-color: var(--color-claro);
@@ -138,11 +158,15 @@ header {
           background-color: var(--color-claro);
           color: var(--color-oscuro); }
       .container .search form input {
-        width: 16rem;
-        height: 2.5rem;
+        width: 24rem;
+        height: 4.5rem;
         background-color: var(--color-claro);
         color: var(--color-oscuro);
-        font-size: 1.3rem; }
+        font-size: 2rem;
+        border-radius: 20px; }
+        .container .search form input:focus {
+          background-color: var(--color-claro);
+          color: var(--color-oscuro); }
         .container .search form input:focus {
           background-color: var(--color-claro);
           color: var(--color-oscuro); }
@@ -167,23 +191,46 @@ header {
         background-color: var(--color-claro);
         color: #9e0000; }
 
-.containerFormulario #registerForm {
+footer p {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px; }
+  footer p a {
+    color: var(--color-focus);
+    text-decoration: underline 1px var(--color-focus); }
+
+#registerForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center; }
-  .containerFormulario #registerForm label {
-    font-size: 3.5rem;
+  gap: 15%;
+  border: solid 2px;
+  width: 40%;
+  height: 43rem; }
+  #registerForm label {
+    font-weight: bold;
+    font-size: 3rem;
     margin-top: 40px; }
-  .containerFormulario #registerForm input {
+  #registerForm input {
     width: 24rem;
     height: 4.5rem;
     background-color: var(--color-claro);
     color: var(--color-oscuro);
-    font-size: 2rem; }
-    .containerFormulario #registerForm input:focus {
+    font-size: 2rem;
+    border-radius: 20px; }
+    #registerForm input:focus {
       background-color: var(--color-claro);
       color: var(--color-oscuro); }
+  #registerForm #registerSubmit {
+    background-color: transparent;
+    border: none;
+    color: var(--color-claro);
+    font-size: 2rem; }
+    #registerForm #registerSubmit:hover {
+      text-shadow: var(--color-claro) 1px 1px 1px;
+      border-bottom: var(--color-claro) solid 1px;
+      border-radius: 10px; }
 
 /*Media Queries de 420px*/
 @media screen and (max-width: 420px) {
@@ -219,22 +266,22 @@ header {
   header .title {
     font-size: 2.2rem;
     margin-bottom: 40px; }
-  .containerFormulario #registerForm {
+  #registerForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    .containerFormulario #registerForm label {
+    #registerForm label {
       font-size: 1.7rem;
       margin-top: 30px; }
-    .containerFormulario #registerForm input {
+    #registerForm input {
       width: 16rem;
       height: 2.5rem;
       background-color: var(--color-claro);
       color: var(--color-oscuro);
       font-size: 1.3rem;
       margin-bottom: 20px; }
-      .containerFormulario #registerForm input:focus {
+      #registerForm input:focus {
         background-color: var(--color-claro);
         color: var(--color-oscuro); }
   .nav .liContainer li a {

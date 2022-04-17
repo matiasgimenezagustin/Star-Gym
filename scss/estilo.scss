@@ -21,6 +21,7 @@ $font-style: VT323;
     background-color: map-get($paleta, verde-claro );
     color: map-get($paleta, verde-oscuro );
     font-size: 2rem;
+    border-radius: 20px;
     &:focus{
         background-color: map-get($paleta, verde-claro );
         color: map-get($paleta, verde-oscuro );
@@ -75,7 +76,12 @@ body{
     height: 100%;
     width: 100%;
 }
-
+.mainSection{
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 30px;
+}
 
 
 .content, .bodyRegister{
@@ -88,6 +94,7 @@ body{
     border-bottom: map-get($paleta, verde-claro ) 1px solid;
     .logo{
         order: 1;
+        width: 400px;
     }
     .liContainer{
         width: 60%;
@@ -140,6 +147,10 @@ header{
     margin: auto;
     flex-direction: column;
     justify-content: center;
+    border: solid map-get($paleta, --color-claro ) 2px;
+    width: 40%;
+    height: 43rem;
+    margin-right: 0;
     h2{
         margin-top: 50px;
         font-size: 2.5rem;
@@ -158,8 +169,14 @@ header{
         }
         .submitButton{
             @include submit-boton-desktop;
+            width: 18rem;
         }
     }
+}
+#resultOfCalculator{
+    font-size: 2rem;
+    align-self: center;
+    margin-top: 30px;
 }
 
 .container{
@@ -185,8 +202,9 @@ header{
             gap: 50px;
             
             .btn-add{
-                width: 2.5rem;
-                height: 2.5rem;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 20px;
                 font-weight: bold;
                 color: map-get($paleta, verde-oscuro );
                 background-color: map-get($paleta, verde-claro );
@@ -197,11 +215,7 @@ header{
                 }
             }
             input{
-                width: 16rem;
-                height: 2.5rem;
-                background-color: map-get($paleta, verde-claro );
-                color: map-get($paleta, verde-oscuro );
-                font-size: 1.3rem;
+                @include input-desktop;
                 &:focus{
                     background-color: map-get($paleta, verde-claro );
                     color: map-get($paleta, verde-oscuro );
@@ -237,22 +251,40 @@ header{
         }
     }
 }
-
-.containerFormulario{
-    #registerForm{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        label{
-            font-size: 3.5rem;
-            margin-top: 40px;
-        }
-        input{
-            @include input-desktop();
+footer{
+    p{
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        a{
+            color: map-get($paleta, verde-focus );
+            text-decoration: underline 1px map-get($paleta, verde-focus );
         }
     }
 }
+
+#registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    border: solid map-get($paleta, --color-claro ) 2px;
+    width: 40%;
+    height: 43rem;
+    label{
+        font-weight: bold;
+        font-size: 3rem;
+        margin-top: 40px;
+    }
+    input{
+        @include input-desktop;
+    }
+    #registerSubmit{
+        @include submit-boton-desktop;
+    }
+}
+
 
 /*Media Queries de 420px*/
 
@@ -293,7 +325,7 @@ header{
             margin-bottom: 40px;
         }
     }
-    .containerFormulario{
+
         #registerForm{
             display: flex;
             flex-direction: column;
@@ -307,7 +339,7 @@ header{
                 @include input-mobible;
             }
         }
-    }
+
     .nav .liContainer li a{
         font-size: 2rem;
     }
