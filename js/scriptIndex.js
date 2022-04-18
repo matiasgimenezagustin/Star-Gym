@@ -64,8 +64,6 @@ uploader.addEventListener("change", async (e) => {
 
 })
 
-
-
 if (getLocal("theme") == null){
 
     local("theme", "verde");
@@ -136,7 +134,6 @@ const switcher = () => {
 const switchButton = document.getElementById("switchButton");
 
 switchButton.addEventListener("click", switcher);
-
 
 const validateUser = () =>{
 
