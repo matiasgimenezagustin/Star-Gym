@@ -33,7 +33,6 @@ if ((getLocal("userImg") == null)||(getLocal("userImg") == undefined)){
 
 }
 
-
 uploader.addEventListener("change", async (e) => {
 
     const file = e.target.files[0];
