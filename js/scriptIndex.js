@@ -23,9 +23,10 @@ const claudinaryUrl = "https://api.cloudinary.com/v1_1/lolazo/image/upload";
 const claudinaryIdPreset = "iphp2ode";
 
 
-if (getLocal("userImg") == null){
+if ((getLocal("userImg") == null)||(getLocal("userImg") == undefined)){
 
-    imgSelected.src = "../img/user-default-img.png";
+    imgSelected.src = "./img/user-default-img.png";
+
 }else{
 
     imgSelected.src = getLocal("userImg");
