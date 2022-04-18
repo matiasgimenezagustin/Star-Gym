@@ -210,7 +210,6 @@ footer p {
   height: 43rem; }
   #registerForm .imgContainer {
     width: 200px;
-    height: 200px;
     border-radius: 50%;
     border: var(--color-claro) solid 3px;
     overflow: hidden; }

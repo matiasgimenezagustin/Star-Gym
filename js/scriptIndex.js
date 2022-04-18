@@ -2,20 +2,36 @@
 let tall, imc, weith, activitySelected, score, scoreImc;
 
 
-/*Funciones para entrar y salir del LocalStorage*/
-
 const local = (key, value) => {
 
     localStorage.setItem(key, JSON.stringify(value));
     
 }
+
+const getLocal = (key) => {
+
+    return JSON.parse(localStorage.getItem(key))
+
+}
+
 const imgSelected = document.getElementById("imgSelected");
 
 const uploader = document.getElementById("imgUploader");
 
-const claudinaryUrl = "https://api.cloudinary.com/v1_1/lolazo/image/upload"
+const claudinaryUrl = "https://api.cloudinary.com/v1_1/lolazo/image/upload";
 
 const claudinaryIdPreset = "iphp2ode";
+
+
+if (getLocal("userImg") == null){
+
+    imgSelected.src = "../img/user-default-img.png";
+}else{
+
+    imgSelected.src = getLocal("userImg");
+
+}
+
 
 uploader.addEventListener("change", async (e) => {
 
@@ -30,21 +46,25 @@ uploader.addEventListener("change", async (e) => {
     console.log(formData)
 
     const res = await axios.post(claudinaryUrl, formData,{
+
         headers:{
+
             "Content-Type": "multipart/form-data"
+
         }
     })
 
-    console.log(res)
-    imgSelected.src = res.data.secure_url;
+    console.log(res);
+
+    let srcImgSelected = res.data.secure_url;
+
+    local("userImg", srcImgSelected);
+
+    imgSelected.src = srcImgSelected;
 
 })
 
-const getLocal = (key) => {
 
-    return JSON.parse(localStorage.getItem(key))
-
-}
 
 if (getLocal("theme") == null){
 
@@ -72,15 +92,15 @@ const selectedDefaultTheme = () =>{
 
         themes("#fcf65a","#b1813b","#ffae00");
 
-        document.getElementById("logoFooter").src = "./img/Your-Helper-logo-yellowTheme.png"
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo-yellowTheme.png";
 
         document.getElementById("logo").src = "./img/Your-Helper-logo-yellowTheme.png";
 
     }else if (theme == "verde"){
 
-        themes("#99ff00","#005e00","#70b607")
+        themes("#99ff00","#005e00","#70b607");
 
-        document.getElementById("logoFooter").src = "./img/Your-Helper-logo.png"
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo.png";
 
         document.getElementById("logo").src = "./img/Your-Helper-logo.png";
 
@@ -96,7 +116,7 @@ const switcher = () => {
 
         themes("#fcf65a","#b1813b","#ffae00");
 
-        document.getElementById("logoFooter").src = "./img/Your-Helper-logo-yellowTheme.png"
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo-yellowTheme.png";
 
         document.getElementById("logo").src = "./img/Your-Helper-logo-yellowTheme.png";
 
@@ -109,7 +129,7 @@ const switcher = () => {
 
         document.getElementById("logo").src = "./img/Your-Helper-logo.png";
 
-        document.getElementById("logoFooter").src = "./img/Your-Helper-logo.png"
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo.png";
     }
 }
 
@@ -117,11 +137,10 @@ const switchButton = document.getElementById("switchButton");
 
 switchButton.addEventListener("click", switcher);
 
-//Username Protocol
 
 const validateUser = () =>{
 
-    let titlePage = document.getElementById("title")
+    let titlePage = document.getElementById("title");
 
     let getUsername = getLocal("username");
 
@@ -135,8 +154,6 @@ const validateUser = () =>{
 }
 
 validateUser();
-
-
 
 const scoreAccountant = () => {
 
@@ -174,6 +191,8 @@ const calculator = () => {
     let imcResult = document.getElementById("resultImc");
 
     imcResult.innerText = "Su imc es: " + imc;
+
+    local("imc", imc);
 
     return imc;
 
@@ -294,7 +313,6 @@ const newAchievementCalculator = () =>{
 
         local("score", score)
 
-
         scoreAccountant();
 
         Swal.fire({
@@ -308,7 +326,6 @@ const newAchievementCalculator = () =>{
         timer: 1500,
 
         })
-
     }
 }    
 
@@ -411,4 +428,5 @@ function addDeleteBtn () {
     })
 
     return deleteBtn;
+
 }
