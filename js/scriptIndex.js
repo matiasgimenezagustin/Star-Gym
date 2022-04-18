@@ -1,4 +1,3 @@
-//Variables Globales importantes
 
 let tall, imc, weith, activitySelected, score, scoreImc;
 
@@ -10,6 +9,36 @@ const local = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
     
 }
+const imgSelected = document.getElementById("imgSelected");
+
+const uploader = document.getElementById("imgUploader");
+
+const claudinaryUrl = "https://api.cloudinary.com/v1_1/lolazo/image/upload"
+
+const claudinaryIdPreset = "iphp2ode";
+
+uploader.addEventListener("change", async (e) => {
+
+    const file = e.target.files[0];
+
+    const formData = new FormData();
+
+    formData.append("file", file);
+
+    formData.append("upload_preset", claudinaryIdPreset);
+
+    console.log(formData)
+
+    const res = await axios.post(claudinaryUrl, formData,{
+        headers:{
+            "Content-Type": "multipart/form-data"
+        }
+    })
+
+    console.log(res)
+    imgSelected.src = res.data.secure_url;
+
+})
 
 const getLocal = (key) => {
 
@@ -43,11 +72,15 @@ const selectedDefaultTheme = () =>{
 
         themes("#fcf65a","#b1813b","#ffae00");
 
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo-yellowTheme.png"
+
         document.getElementById("logo").src = "./img/Your-Helper-logo-yellowTheme.png";
 
     }else if (theme == "verde"){
 
         themes("#99ff00","#005e00","#70b607")
+
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo.png"
 
         document.getElementById("logo").src = "./img/Your-Helper-logo.png";
 
@@ -63,6 +96,8 @@ const switcher = () => {
 
         themes("#fcf65a","#b1813b","#ffae00");
 
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo-yellowTheme.png"
+
         document.getElementById("logo").src = "./img/Your-Helper-logo-yellowTheme.png";
 
     }
@@ -73,6 +108,8 @@ const switcher = () => {
         themes("#99ff00","#005e00","#70b607");
 
         document.getElementById("logo").src = "./img/Your-Helper-logo.png";
+
+        document.getElementById("logoFooter").src = "./img/Your-Helper-logo.png"
     }
 }
 
@@ -374,14 +411,4 @@ function addDeleteBtn () {
     })
 
     return deleteBtn;
-}
-
-const clearButton = document.getElementById("clear");
-
-clearButton.addEventListener("click", clearLocal);
-
-const clearLocal = () => {
-
-    localStorage.clear();
-
 }

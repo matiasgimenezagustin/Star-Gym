@@ -204,10 +204,18 @@ footer p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15%;
+  gap: 10%;
   border: solid 2px;
   width: 40%;
   height: 43rem; }
+  #registerForm .imgContainer {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: var(--color-claro) solid 3px;
+    overflow: hidden; }
+    #registerForm .imgContainer #imgSelected {
+      width: 200px; }
   #registerForm label {
     font-weight: bold;
     font-size: 3rem;
@@ -234,46 +242,35 @@ footer p {
 
 /*Media Queries de 420px*/
 @media screen and (max-width: 420px) {
-  #switchButton {
-    width: 16rem;
-    height: 2.5rem;
-    background-color: var(--color-claro);
-    color: var(--color-oscuro);
-    font-size: 1.3rem;
-    margin-bottom: 20px; }
-    #switchButton:focus {
-      background-color: var(--color-claro);
-      color: var(--color-oscuro); }
+  .content {
+    padding: 2%; }
   .nav {
-    flex-direction: column; }
-    .nav .logo {
-      order: 1;
-      width: 280px;
-      margin: auto; }
-    .nav ul {
-      order: 2;
-      flex-direction: column;
-      justify-content: center;
-      align-self: center; }
-      .nav ul li a {
-        font-size: 1rem; }
-    .nav h3 {
-      font-size: 2rem;
-      order: 3;
-      width: 100%;
-      align-self: center;
-      text-align: center; }
-  header .title {
-    font-size: 2.2rem;
-    margin-bottom: 40px; }
-  #registerForm {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    #registerForm label {
+    gap: 30px; }
+    .nav .logo {
+      width: 200px;
+      margin: auto;
+      margin-top: 20px; }
+    .nav #score {
+      font-size: 2rem; }
+    .nav #switchButton {
+      width: 160px;
+      height: 50px;
       font-size: 1.7rem;
-      margin-top: 30px; }
+      margin: auto;
+      margin-bottom: 20px; }
+  #title {
+    font-size: 2.5rem; }
+  .mainSection {
+    flex-direction: column;
+    width: 100%;
+    gap: 50px; }
+  #registerForm {
+    width: 100%;
+    height: 500px; }
+    #registerForm label {
+      font-size: 2rem;
+      margin-bottom: 20px; }
     #registerForm input {
       width: 16rem;
       height: 2.5rem;
@@ -284,18 +281,53 @@ footer p {
       #registerForm input:focus {
         background-color: var(--color-claro);
         color: var(--color-oscuro); }
-  .nav .liContainer li a {
-    font-size: 2rem; }
-  .imcCalculator form input {
-    width: 16rem;
-    height: 2.5rem;
-    background-color: var(--color-claro);
-    color: var(--color-oscuro);
-    font-size: 1.3rem;
-    margin-bottom: 20px; }
-    .imcCalculator form input:focus {
+    #registerForm .imgContainer {
+      margin-bottom: 20px; }
+  .imcCalculator {
+    width: 100%;
+    height: 800px; }
+    .imcCalculator #resultImc {
+      font-size: 1.7rem; }
+    .imcCalculator #resultOfCalculator {
+      font-size: 1.5rem; }
+    .imcCalculator #calculatorForm input {
+      width: 16rem;
+      height: 2.5rem;
       background-color: var(--color-claro);
-      color: var(--color-oscuro); } }
+      color: var(--color-oscuro);
+      font-size: 1.3rem;
+      margin-bottom: 20px; }
+      .imcCalculator #calculatorForm input:focus {
+        background-color: var(--color-claro);
+        color: var(--color-oscuro); }
+  .container h1 {
+    font-size: 2.5rem; }
+  .container .search form {
+    gap: 10px; }
+    .container .search form input {
+      width: 16rem;
+      height: 2.5rem;
+      background-color: var(--color-claro);
+      color: var(--color-oscuro);
+      font-size: 1.3rem;
+      margin-bottom: 20px; }
+      .container .search form input:focus {
+        background-color: var(--color-claro);
+        color: var(--color-oscuro); }
+    .container .search form .btn-add {
+      width: 50px;
+      height: 2.7rem; }
+  .container .search .empty p {
+    font-size: 1.5rem; }
+  .container .li-container ul li p {
+    font-size: 2rem;
+    overflow-wrap: anywhere; }
+  footer {
+    margin-top: 20px; }
+    footer p {
+      font-size: 1.2rem; }
+      footer p img {
+        width: 70px; } }
 
 .here {
   color: var(--color-focus); }

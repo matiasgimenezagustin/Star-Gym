@@ -28,6 +28,11 @@
             <form action="" id="registerForm">
                 <label for="name">Ingresa tu nickname</label>
                 <input name="name"  type="text" placeholder="ejemplo: The Mandalorian">
+                <div class="imgContainer">
+                    <img src="" alt="imagen seleccionada" id="imgSelected">
+                </div>
+
+                <input type="file" id="imgUploader">
                 <input type="submit" id="registerSubmit">
             </form>
 
@@ -61,11 +66,12 @@
         </div>
     </main>
     <footer>
-        <p>¡La pagina <img src="./img/Your-Helper-logo.png" width="120px" alt=""> esta desarrollandose actualmente, visita <a href="https://github.com/matiasgimenezagustin/Star-Gym">mi repositorio</a> para mas novedades!</p>
+        <p>¡La pagina <img id="logoFooter" src="./img/Your-Helper-logo.png" width="120px" alt=""> esta desarrollandose actualmente, visita <a href="https://github.com/matiasgimenezagustin/Star-Gym">mi repositorio</a> para mas novedades!</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/scriptIndex.js"></script>
 </body>
 </html>

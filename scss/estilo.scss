@@ -268,10 +268,20 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15%;
+    gap: 10%;
     border: solid map-get($paleta, --color-claro ) 2px;
     width: 40%;
     height: 43rem;
+    .imgContainer{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: map-get($paleta, verde-claro ) solid 3px;
+        overflow: hidden;
+        #imgSelected{
+            width: 200px;
+        }
+    }
     label{
         font-weight: bold;
         font-size: 3rem;
@@ -290,61 +300,99 @@ footer{
 
 
 @media screen and (max-width: 420px){
-    #switchButton{
-        @include input-mobible;
+    .content{
+        padding: 2%;
     }
     .nav{
-        .logo{
-            order: 1;
-            width: 280px;
-            margin: auto;
-        }
         flex-direction: column;
-        ul{
-            order: 2;
-            flex-direction: column;
-            justify-content: center;
-            align-self: center;
-            li{
-                a{
-                    font-size: 1rem;
-                }
-            }
+        gap: 30px;
+        .logo{
+            width: 200px;
+            margin: auto;
+            margin-top: 20px;
         }
-        h3{
+        #score{
             font-size: 2rem;
-            order: 3;
-            width: 100%;
-            align-self: center;
-            text-align: center;
+        }
+        #switchButton{
+            width: 160px;
+            height: 50px;
+            font-size: 1.7rem;
+            margin: auto;
+            margin-bottom: 20px;
         }
     }
-    header{
-        .title{
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+    #title{
+        font-size: 2.5rem;
+    }
+    .mainSection{
+        flex-direction: column;
+        width: 100%;
+        gap: 50px;
+    }
+    #registerForm{
+        width: 100%;
+        height: 500px;
+        label{
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        input{
+            @include input-mobible;
+        }
+        .imgContainer{
+            margin-bottom: 20px;
         }
     }
-
-        #registerForm{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            label{
-                font-size: 1.7rem;
-                margin-top: 30px;
-            }
+    .imcCalculator{
+        width: 100%;
+        height: 800px;
+        #resultImc{
+            font-size: 1.7rem;
+        }
+        #resultOfCalculator{
+            font-size: 1.5rem;
+        }
+        #calculatorForm{
             input{
                 @include input-mobible;
             }
         }
-
-    .nav .liContainer li a{
-        font-size: 2rem;
     }
-    .imcCalculator form input{
-        @include input-mobible;
+    .container{
+        h1{
+            font-size: 2.5rem;
+        }
+        .search{
+            form{
+                gap: 10px;
+                input{
+                    @include input-mobible;
+                }
+                .btn-add{
+                    width: 50px;
+                    height: 2.7rem;
+                }
+            }
+            .empty{
+                p{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .li-container ul li p{
+            font-size: 2rem;
+            overflow-wrap: anywhere;
+        }
+    }
+    footer{
+        margin-top: 20px;
+        p{
+            font-size: 1.2rem;
+            img{
+                width: 70px;
+            }
+        }
     }
 }
 
