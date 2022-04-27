@@ -14,13 +14,14 @@ const getLocal = (key) => {
 
 }
 
+
 const imgSelected = document.getElementById("imgSelected");
 
 const uploader = document.getElementById("imgUploader");
 
-const claudinaryUrl = "https://api.cloudinary.com/v1_1/lolazo/image/upload";
+const claudinaryUrl = "https://api.cloudinary.com/v1_1/dipy/image/upload";
 
-const claudinaryIdPreset = "iphp2ode";
+const claudinaryIdPreset = "nngflhcm";
 
 
 if ((getLocal("userImg") == null)||(getLocal("userImg") == undefined)){
